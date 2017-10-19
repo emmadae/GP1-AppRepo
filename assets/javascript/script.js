@@ -43,29 +43,31 @@ console.log(httpGP);
 
 
 
-$("#test").click(runGPQuery());
-
-
-
-function runGPQuery(httpGP) {
-//GM ajax call
-console.log("running");
-  $.ajax({
-    url: httpGP,
-    method: "GET"
-  }).done(function(dataGM){
-    console.log("finished");
-    //test queryURL
-    console.log("------------------------------------");
-    console.log("URL: " + httpGP);
-    console.log("------------------------------------");
-    //test dataGM
-    console.log("info: "+dataGM);
-    console.log("------------------------------------");
-
-  });
-}
-
+// $("#test").click(runGPQuery(httpGP));
+// //
+// //
+// //
+// function runGPQuery(httpGP) {
+// //GM ajax call
+// console.log("running");
+//   $.ajax({
+//     url: httpGP,
+//     method: "GET",
+//     datatype:"jsonp",
+//     crossorigin:true
+//   }).done(function(dataGM){
+//     console.log("finished");
+//     //test queryURL
+//     console.log("------------------------------------");
+//     console.log("URL: " + httpGP);
+//     console.log("------------------------------------");
+//     //test dataGM
+//     console.log("info: "+dataGM);
+//     console.log("------------------------------------");
+//
+//   });
+// }
+//
 
 
 
