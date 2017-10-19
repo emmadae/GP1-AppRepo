@@ -1,3 +1,7 @@
+#map{
+  height:400px;
+  width: 100%;
+}
 /* Body Background Styling */
 body{
   background-color: #efe7dd;
@@ -118,7 +122,7 @@ body{
   -webkit-animation: 3s 1s;
 }
 
-.bean-1, .bean-2, .bean-3, .bean-4, .bean-5, 
+.bean-1, .bean-2, .bean-3, .bean-4, .bean-5,
 .bean-6, .bean-7, .bean-8, .bean-9{
   background-color: #2a140e;
   bottom: 0;
@@ -153,19 +157,19 @@ body{
   bottom:5px;
   left:228px;
   transform: rotate(80deg);
-  -webkit-transform: rotate(80deg);  
+  -webkit-transform: rotate(80deg);
 }
 
 .bean-5 {
   left:5px;
   transform: rotate(0deg);
-  -webkit-transform: rotate(0deg);  
+  -webkit-transform: rotate(0deg);
 }
 
 .bean-6 {
   left:270px;
   transform: rotate(0deg);
-  -webkit-transform: rotate(0deg); 
+  -webkit-transform: rotate(0deg);
 }
 
 .bean-7 {
@@ -296,12 +300,12 @@ h2 {
 
 .line-2{
   left:48px;
-  
+
 }
 
 .line-3{
   margin-left: 95px;
-  
+
 }
 
 .line-4{
@@ -371,7 +375,7 @@ h2 {
   bottom: 10px;
 }
 
-.foam-1, .foam-2, .foam-3, .foam-4, 
+.foam-1, .foam-2, .foam-3, .foam-4,
 .foam-5, .foam-6, .foam-7 {
   float: left;
   position: absolute;
@@ -387,27 +391,25 @@ h2 {
 }
 .foam-2 {
   top: -35px;
-  left: 20px; 
+  left: 20px;
 }
 .foam-3 {
   top: -25px;
-  left: 50px; 
+  left: 50px;
 }
 .foam-4 {
   top: -35px;
-  left: 80px; 
+  left: 80px;
 }
 .foam-5 {
   top: -30px;
-  left: 110px; 
+  left: 110px;
 }
 .foam-6 {
   top: -20px;
-  left: 140px; 
+  left: 140px;
 }
 .foam-7 {
   top: -30px;
   left: 160px;
 }
-
-
