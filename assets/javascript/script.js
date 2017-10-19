@@ -1,4 +1,3 @@
-
 // Document Ready
 $(document).ready(function() {
 
@@ -43,33 +42,61 @@ console.log(httpGP);
 
 
 
-// $("#test").click(runGPQuery(httpGP));
-// //
-// //
-// //
-// function runGPQuery(httpGP) {
-// //GM ajax call
-// console.log("running");
-//   $.ajax({
-//     url: httpGP,
-//     method: "GET",
-//     datatype:"jsonp",
-//     crossorigin:true
-//   }).done(function(dataGM){
-//     console.log("finished");
-//     //test queryURL
-//     console.log("------------------------------------");
-//     console.log("URL: " + httpGP);
-//     console.log("------------------------------------");
-//     //test dataGM
-//     console.log("info: "+dataGM);
-//     console.log("------------------------------------");
-//
-//   });
-// }
-//
+$("#test").click(runGPQuery());
 
 
+
+function runGPQuery(httpGP) {
+//GM ajax call
+console.log("running");
+  $.ajax({
+    url: httpGP,
+    method: "GET"
+  }).done(function(dataGM){
+    console.log("finished");
+    //test queryURL
+    console.log("------------------------------------");
+    console.log("URL: " + httpGP);
+    console.log("------------------------------------");
+    //test dataGM
+    console.log("info: "+dataGM);
+    console.log("------------------------------------");
+
+  });
+}
+
+	// BEER AND BEANS FUNCTION - Fill'er up
+	$ ("#fill-me-up").click(function(){
+
+	// Poor Drink Function
+	  $('.pour')
+	    .delay(2000)
+	    .animate({
+	      height: '360px'
+	      }, 1500)
+	    .delay(1600)
+	    .slideUp(500);
+
+	    $('.beans')
+	    .delay(2000)
+	    .animate({
+	      height: '360px'
+	      }, 1500);
+
+	  // Liquid Fills Up
+	  $('#liquid')
+	    .delay(3400)
+	    .animate({
+	      height: '225px'
+	    }, 2500);
+
+	  // Beer foam rises
+	  $('.beer-foam')
+	    .delay(3400)
+	    .animate({
+	      bottom: '250px'
+	      }, 2500);
+	});
 
 
 
