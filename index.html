@@ -1,52 +1,23 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
-<!-- Head Of Website -->
-	<head>
-
-	<!-- My CSS Stylesheet Links -->
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-		<title> Beans &amp; Brews </title>
-
-	<!-- Google Font Links & Icon Links-->
-		<script src="https://use.fontawesome.com/92c41c2648.js"></script>
-		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-
-	<!-- Link to Moment.js -->
-   		<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-
-	<!-- JavaScript & jQuery & Firebase Links -->
+<html>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 50%;
+       }
+    </style>
+		<link src="assets/css/style.css" rel="stylesheet">
+	  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdGVuh0tV7TL63m1dBWw0krADF2MPj0FA&callback=initMap">
+    </script>
 		<script type="text/javascript" src="assets/javascript/script.js"></script>
-	</head>
-
-
-<!-- Body of Website -->
-	<body>
-
-	<!-- Header & Navigation Bar For Website -->
-		<header>
-			<WHAT IS UP PARTAY PEOEPL?>
-			<nav class="nav-bar">
-				<ul class="list-items">
-					<div>
-						<p>yo yo yo</p>
-					</div>
-			</nav>
-		</header>
-<button id="test">test</button>
-		<div>
-			<p> BA HUMBUG</p>
-		</div>
-
-
-
-
-
-	</body>
-
+  </body>
 </html>
