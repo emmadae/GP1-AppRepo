@@ -101,6 +101,17 @@ function initMap() {
   //creates the marker locator on the google map. Probably not necessary
   var marker = new google.maps.Marker({
     position: uluru,
-    map: map
+    map: maptext
   });
 }
+
+$(document).ready(function(){
+  $("#search-btn").on("click", function(event){
+    event.preventDefault();
+    var search = $("#search").val();
+    var zipcode = $("#zipcode").val();
+    var miAway = $("#miles-away>option:selected").text();
+    var destinationSelect = $("#destination-select>option:selected").text();
+    var kmAway = miAway * 1.60934;  
+  });
+});
