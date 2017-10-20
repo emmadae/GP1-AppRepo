@@ -36,59 +36,39 @@
 
 $(document).on("click", "#test",function(){
   database.ref().set({
-    like:{
       liked:0,
       disliked:0
-    }
   });
 });
-$(document).on("click", "#like",function(){
-  var test= firebase.database().ref("like");
+
+
+$(document).on("click", "#like", function(){
+  var test= firebase.database().ref("liked");
   var likes;
-    test.on("child_added", function(snapshot){
-      console.log(snapshot.val());
+    test.once("value", function(snapshot){
       likes = snapshot.val();
-      console.log(likes);
       likes++;
-      console.log(likes);
-      database.ref().set({
-        like:{
-          liked:likes
-        }
-      });
-
+      database.ref().update({liked:likes});
     });
 
-
-  database.ref("like/liked").on("value",function(snapshot){
-    console.log("snapshot2= "+snapshot.val());
-    $("#likes").text("Likes: "+ snapshot.val());
+  database.ref("liked").once("value",function(snapshot){
+    $("#likes").text("Likes: "+ (parseInt(snapshot.val())+1));
   });
 });
-
-
-
+// //
+// //
+// //
 $(document).on("click", "#dislike",function(){
-  var test= firebase.database().ref("like");
+  var test= firebase.database().ref("disliked");
   var dislikes;
-    test.on("child_added", function(snapshot){
-      console.log(snapshot.val());
-      likes = snapshot.val();
-      console.log(likes);
-      likes++;
-      console.log(likes);
-      database.ref().set({
-        like:{
-          liked:likes
-        }
-      });
-
+    test.once("value", function(snapshot){
+      dislikes = snapshot.val();
+      dislikes++;
+      database.ref().update({disliked:dislikes});
     });
 
-
-  database.ref("like/disliked").on("value",function(snapshot){
-    console.log("snapshot2= "+snapshot.val());
-    $("#dislikes").text("Dislikes: "+ snapshot.val());
+  database.ref("disliked").on("value",function(snapshot){
+    $("#dislikes").text("Dislikes: "+ (parseInt(snapshot.val())+1));
   });
 });
 
