@@ -1,19 +1,18 @@
 // Document Ready
-$(document).ready(function() {
 
-  var config = {
-    apiKey: "AIzaSyDRQXaMgkueFCWKSOynK2w_2e81_J7xUUM",
-    authDomain: "gp1-app.firebaseapp.com",
-    databaseURL: "https://gp1-app.firebaseio.com",
-    projectId: "gp1-app",
-    storageBucket: "gp1-app.appspot.com",
-    messagingSenderId: "922497710932"
-  };
-  firebase.initializeApp(config);
 
-	//variables
-	var database = firebase.database();
-	console.log("hello World");
+  // var config = {
+  //   apiKey: "AIzaSyDRQXaMgkueFCWKSOynK2w_2e81_J7xUUM",
+  //   authDomain: "gp1-app.firebaseapp.com",
+  //   databaseURL: "https://gp1-app.firebaseio.com",
+  //   projectId: "gp1-app",
+  //   storageBucket: "gp1-app.appspot.com",
+  //   messagingSenderId: "922497710932"
+  // };
+  // firebase.initializeApp(config);
+  //
+	// //variables
+	// var database = firebase.database();
 
 	// on click funtion for navigation bar to appear on click
 	$('#nav-icon3').click(function(){
@@ -42,31 +41,32 @@ console.log(httpGP);
 
 
 
-$("#test").click(runGPQuery());
-
-
-
-function runGPQuery(httpGP) {
-//GM ajax call
-console.log("running");
-  $.ajax({
-    url: httpGP,
-    method: "GET"
-  }).done(function(dataGM){
-    console.log("finished");
-    //test queryURL
-    console.log("------------------------------------");
-    console.log("URL: " + httpGP);
-    console.log("------------------------------------");
-    //test dataGM
-    console.log("info: "+dataGM);
-    console.log("------------------------------------");
-
-  });
-}
+// $("#test").click(runGPQuery());
+//
+//
+//
+// function runGPQuery(httpGP) {
+// //GM ajax call
+// console.log("running");
+//   $.ajax({
+//     url: httpGP,
+//     method: "GET"
+//   }).done(function(dataGM){
+//     console.log("finished");
+//     //test queryURL
+//     console.log("------------------------------------");
+//     console.log("URL: " + httpGP);
+//     console.log("------------------------------------");
+//     //test dataGM
+//     console.log("info: "+dataGM);
+//     console.log("------------------------------------");
+//
+//   });
+// }
 
 	// BEER AND BEANS FUNCTION - Fill'er up
 	$ ("#fill-me-up").click(function(){
+
 
 		// Poor Drink Function
 		$('.pour').delay(2000).animate({
@@ -85,12 +85,22 @@ console.log("running");
 		$('.beer-foam').delay(3400).animate({
 		    bottom: '250px'
 		    }, 2500);
+
 	});
 
-
-
-
-
-
-
-});
+//note: we'll probably want to add variables here to try and modify what shows up on the map. Reading documentation will be helpful here!!!
+function initMap() {
+  //sets coordinates to center the map on austin
+  var uluru = {lat: 30.286, lng: -97.731};
+  //sets up a new map. Targets id="map"
+  var map = new google.maps.Map(document.getElementById("map"), {
+  //zoom distance. 10 roughly city size
+    zoom: 10,
+    center: uluru
+  });
+  //creates the marker locator on the google map. Probably not necessary
+  var marker = new google.maps.Marker({
+    position: uluru,
+    map: map
+  });
+}

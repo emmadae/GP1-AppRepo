@@ -3,17 +3,22 @@
 
 <!-- Head Of Website -->
 	<head>
-	
+
 	<!-- My CSS Stylesheet Links -->
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	
+
 		<title> Beans &amp; Brews: Search </title>
 
 	<!-- Google Font Links & Icon Links-->
 		<script src="https://use.fontawesome.com/92c41c2648.js"></script>
-		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+	<!-- Link to Moment.js -->
+   		<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+	<!-- JavaScript & jQuery & Firebase Links -->
 	</head>
 
 
@@ -34,6 +39,8 @@
 
 	<!-- Iniput Form For Search Results -->
 		<section>
+			<div id="map">
+			</div>
 			<form>
 			<!-- Search By Name Input Field -->
 			  	<div class="form-group">
@@ -93,9 +100,13 @@
 	<!-- JavaScript & jQuery & Firebase Links -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script>
-		<script type="text/javascript" src="assets/javascript/script.js"></script> 
+		<script type="text/javascript" src="assets/javascript/script.js"></script>
 
 	</body>
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script>
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmgQV-veLujuFsnttWutIbvARgk27Zud8&callback=initMap">
+	</script>
+	<script type="text/javascript" src="assets/javascript/script.js"></script>
 </html>
-
