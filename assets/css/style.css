@@ -1,6 +1,6 @@
 #map{
   height:400px;
-  width: 100%;
+  width: 25%;
 }
 /* Body Background Styling */
 body{
@@ -373,6 +373,9 @@ h2 {
 .beer-foam {
   position: absolute;
   bottom: 10px;
+  /*These two cause the bubbles to appear remove*/
+  opacity: 0;
+  z-index:10;
 }
 
 .foam-1, .foam-2, .foam-3, .foam-4,
