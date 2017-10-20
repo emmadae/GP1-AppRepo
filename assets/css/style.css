@@ -74,7 +74,14 @@ body{
   margin-left:43%;
   margin-top:-7%;
 
- 
+}
+
+#brews-header{
+  font-family:"Merriweather",serif;
+  font-size:110px;
+  color:white;
+  margin-left:27%;
+  padding-top:-10%;
 }
 
 
