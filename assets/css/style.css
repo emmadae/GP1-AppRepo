@@ -1,108 +1,589 @@
+/* Body Background Styling */
+body{
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size:100%;
+  min-height: 100%;
+}
+
+/* Map Settings */
 #map{
   height:400px;
   width: 25%;
 }
-/* Body Background Styling */
-body{
-  background-color: #efe7dd;
-}
 
-/* Hamburger Navigation Icon Styling ----------------------------------------- */
-#nav-icon3{
-  width: 40px;
-  position: relative;
-  float:left;
-  margin:2.5%;
-  cursor: pointer;
-}
 
-#nav-icon3 span {
-    display: block;
-    position: absolute;
-    height:6px;
-    width: 100%;
-    background: #665847;
-    left: 0;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: .25s ease-in-out;
-    -moz-transition: .25s ease-in-out;
-    -o-transition: .25s ease-in-out;
-    transition: .25s ease-in-out;
-}
-
-#nav-icon3 span:nth-child(1) {
-  top: 0px;
-}
-
-#nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
-  top: 14px;
-}
-
-#nav-icon3 span:nth-child(4) {
-  top: 28px;
-}
-
-#nav-icon3.open span:nth-child(1) {
-  top: 18px;
-  width: 0%;
-  left: 50%;
-}
-
-#nav-icon3.open span:nth-child(2) {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-#nav-icon3.open span:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-#nav-icon3.open span:nth-child(4) {
-  top: 18px;
-  width: 0%;
-  left: 50%;
-}
-
-/* Navigation Menu Items */
+/* NAV BAR MENU STYLING  ----------------------------------------------------- */
 .nav ul{
-  display:none;
   float: left;
-
+  width:100%;
+  padding:15px;
 }
 
 .nav li{
-  background:#1b1e31;
-  padding:20px;
+  display: inline-block;
+  position: relative;
+  float:left;
+
+}
+
+.line-brake-nav{
+  list-style-type: none;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: "Raleway", sans-serif;
 }
 
 .nav li a {
-  list-style-type: none;
+    list-style-type: none;
     text-decoration: none;
-    color: #665847;
-    font-size: 20px;
+    color: white;
+    font-size: 18px;
     font-family: "Raleway", sans-serif;
-    margin: 12px;
+    margin: 15px;
 }
 
 .nav li a:hover {
-  transition: ease-in-out .75s;
-    color:#3D362D;
+    transition: ease-in-out .20s;
+    color:#81776E;
     cursor: pointer;
 }
 
 .nav li a.active {
-  color:#3D362D;
+  color:#81776E;
 }
 
-/* BEAN AND BEER ANIMATION SYTLING ------------------------------------------- */
+
+
+#beans-header{
+  font-family:"Merriweather",serif;
+  font-size:110px;
+  color:white;
+  margin-left:20%;
+  padding-top:7%;
+ 
+ 
+}
+
+#and-header{
+  font-family:"Merriweather",serif;
+  font-size:200px;
+  color:gray;
+  margin-left:43%;
+  margin-top:-7%;
+
+ 
+}
+
+
+
+/* REALLY FUCKING WET CODE --------------------------------------------------- */
+#content-index {
+  top:-100px;
+  height: 650px;
+  margin: 0 auto;
+  margin-left;
+  position: relative;
+  width: 5%;
+  margin-left:66.9%;
+}
+
+#content-index div { 
+  position: absolute; 
+}
+
+
+
+.line-1, .line-2, .line-3, .line-4, .line-5, .line-6,
+.line-7, .line-8, .line-9, .line-10, .line-11, .line-12,
+.line-13, .line-14, .line-15, .line-16, .line-17, .line-18,
+.line-19, .line-20, .line-21, .line-22, .line-23, .line-24, .line-25{
+  position: absolute;
+  content: '';
+  background-color: white;
+}
+
+.line-1{
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: 0s;
+    animation-direction:left;
+}
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-2{
+  top:25px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: .05s;
+    animation-direction:left;
+}
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-3{
+  top:50px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: .1s;
+    animation-direction:left;
+}
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-4{
+  top:75px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: .15s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-5{
+  top:100px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: .2s;
+    animation-direction:left;
+}
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-6{
+  top:125px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: .25s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+
+.line-7{
+  top:150px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: .3s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-8{
+  top:175px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: .35s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-9{
+  top:200px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: .40s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-10{
+  top:225px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: .45s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-11{
+  top:250px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: .5s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-12{
+  top:275px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: .55s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-13{
+  top:300px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: .6s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-14{
+  top:325px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: .65s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-15{
+  top:350px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: .70s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-16{
+  top:375px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: .75s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-17{
+  top:400px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: .8s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-18{
+  top:425px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: .85s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-19{
+  top:450px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: .9s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-20{
+  top:475px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: 1.0s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-21{
+  top:500px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: 1.05s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-22{
+  top:525px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: 1.1s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-23{
+  top:550px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: 1.15s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-24{
+  top:575px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: 1.2s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+.line-25{
+  top:600px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  width:100%;
+  height:12px;
+  z-index: 20;
+    animation-name:slide; 
+    animation-duration:2s;
+    animation-delay: 1.25s;
+    animation-direction:left;
+}
+
+@keyframes slide {
+    from {right: -500%;}
+    to {right: 0;}
+}
+
+
+
+
+
+
+
+
+/* BEANS AND BREWS ANIMATION SYTLING ------------------------------------------ */
 
 #logo{
   width:50%;
@@ -283,7 +764,7 @@ body{
 }
 
 /* Beer Mug Lines - Faded */
-.line{
+.beer-line{
   background-color: rgba(255, 255, 255, 0.25);
   bottom: -225px;
   content: '';
@@ -295,22 +776,22 @@ body{
   width: 35px;
 }
 
-.line-1{
+.beer-line-1{
   left: 0;
 
 }
 
-.line-2{
+.beer-line-2{
   left:48px;
 
 }
 
-.line-3{
+.beer-line-3{
   margin-left: 95px;
 
 }
 
-.line-4{
+.beer-line-4{
   margin-left: 142px;
 }
 
@@ -374,9 +855,6 @@ body{
 .beer-foam {
   position: absolute;
   bottom: 10px;
-  /*These two cause the bubbles to appear remove*/
-  opacity: 0;
-  z-index:10;
 }
 
 .foam-1, .foam-2, .foam-3, .foam-4,
@@ -417,3 +895,74 @@ body{
   top: -30px;
   left: 160px;
 }
+
+/* Fill Me Up Button Formating */
+#fill-me-up{
+  list-style-type: none;
+  text-decoration: none;
+  border:1px solid white;
+  background: none;
+  color:white;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  padding:10px 15px;
+  margin-left:30%;
+}
+
+
+/* SEARCH PAGE STYLING -------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+/* ABOUT PAGE STYLING ---------------------------------------------------------*/
+.about-us-body h1{
+  font-family: "Merriweather", serif;
+  font-size: 50px;
+  padding:8% 4% 4% 4%;
+  color:#594B3E;
+}
+
+.about-us-body p{
+  font-family:"Raleway", sans-serif;
+  color: #81776E;
+  width:90%;
+  font-size:24px;
+  margin-left:4%;
+  margin-right:6%
+}
+
+
+.about-us-connect h2{
+  font-family: "Merriweather", serif;
+  font-size: 35px;
+  padding:8% 4% 2% 4%;
+  color:#594B3E;
+}
+
+#ph-about{
+   font-family:"Raleway", sans-serif;
+  color: #81776E;
+  width:90%;
+  font-size:24px;
+  margin-left:4%;
+  margin-right:6%
+}
+
+
+
+
+
+
+/* INSTRUCTIONS PAGE STYLING --------------------------------------------------*/
+
+
+
+
+
+

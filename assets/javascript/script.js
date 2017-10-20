@@ -1,6 +1,37 @@
 // Document Ready
+$(document).ready(function() {
+	// BEER AND BEANS FUNCTION - Fill'er up
+	$ ("#fill-me-up").click(function(){
 
 
+		// Poor Drink Function
+		$('.pour').delay(2000).animate({
+		    height: '360px'
+		    }, 1500).delay(1600).slideUp(500);
+
+		// Beans Animation
+		$('.beans').fadeIn(4000);
+		  
+		// Liquid Fills Up
+		$('#liquid').delay(3400).animate({
+		    height: '225px'
+		    }, 2500);
+		  
+		// Beer foam rises
+		$('.beer-foam').delay(3400).animate({
+		    bottom: '250px'
+		    }, 2500);
+	});
+
+	// on click funtion for navigation bar to appear on click
+	$('#nav-icon3').click(function(){
+		$(".list-items").slideToggle(800);
+	});
+});
+
+$(window).load(function() {
+	$("#content-index").show();
+}
   // var config = {
   //   apiKey: "AIzaSyDRQXaMgkueFCWKSOynK2w_2e81_J7xUUM",
   //   authDomain: "gp1-app.firebaseapp.com",
@@ -14,10 +45,6 @@
 	// //variables
 	// var database = firebase.database();
 
-	// on click funtion for navigation bar to appear on click
-	$('#nav-icon3').click(function(){
-		$(".list-items").slideToggle(800);
-	});
 /*google places----------------------------------------------------------------*/
   //current location austin Tx
   var locationGP = "location=30.286,-97.731";
@@ -64,29 +91,6 @@ console.log(httpGP);
 //   });
 // }
 
-	// BEER AND BEANS FUNCTION - Fill'er up
-	$ ("#fill-me-up").click(function(){
-
-
-		// Poor Drink Function
-		$('.pour').delay(2000).animate({
-		    height: '360px'
-		    }, 1500).delay(1600).slideUp(500);
-
-		// Beans Animation
-		$('.beans').fadeIn(4000);
-		  
-		// Liquid Fills Up
-		$('#liquid').delay(3400).animate({
-		    height: '225px'
-		    }, 2500);
-		  
-		// Beer foam rises
-		$('.beer-foam').delay(3400).animate({
-		    bottom: '250px'
-		    }, 2500);
-
-	});
 
 //note: we'll probably want to add variables here to try and modify what shows up on the map. Reading documentation will be helpful here!!!
 function initMap() {
