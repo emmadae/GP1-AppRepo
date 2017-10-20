@@ -1,18 +1,18 @@
 // Document Ready
 
 
-  // var config = {
-  //   apiKey: "AIzaSyDRQXaMgkueFCWKSOynK2w_2e81_J7xUUM",
-  //   authDomain: "gp1-app.firebaseapp.com",
-  //   databaseURL: "https://gp1-app.firebaseio.com",
-  //   projectId: "gp1-app",
-  //   storageBucket: "gp1-app.appspot.com",
-  //   messagingSenderId: "922497710932"
-  // };
-  // firebase.initializeApp(config);
-  //
-	// //variables
-	// var database = firebase.database();
+// Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDRQXaMgkueFCWKSOynK2w_2e81_J7xUUM",
+    authDomain: "gp1-app.firebaseapp.com",
+    databaseURL: "https://gp1-app.firebaseio.com",
+    projectId: "gp1-app",
+    storageBucket: "gp1-app.appspot.com",
+    messagingSenderId: "922497710932"
+  };
+  firebase.initializeApp(config);
+	//variables
+	var database = firebase.database();
 
 	// on click funtion for navigation bar to appear on click
 	$('#nav-icon3').click(function(){
@@ -29,11 +29,69 @@
   var keyGP = "key=AIzaSyA8_XF-LUfDpeY-Lt1RapGFKkgKGvYCbmI";
   //http+search parameters
   var httpGP = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"+locationGP+"&"+radiusGP+"&"+typeGP+"&"+keyGP;
-
+// var likes =0;
   //   var keyGM = "key=AIzaSyAdGVuh0tV7TL63m1dBWw0krADF2MPj0FA";
   // var baseURLGM = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" +
   //   keyGM + "&q=";
-console.log(httpGP);
+
+$(document).on("click", "#test",function(){
+  database.ref().set({
+    like:{
+      liked:0,
+      disliked:0
+    }
+  });
+});
+$(document).on("click", "#like",function(){
+  var test= firebase.database().ref("like");
+  var likes;
+    test.on("child_added", function(snapshot){
+      console.log(snapshot.val());
+      likes = snapshot.val();
+      console.log(likes);
+      likes++;
+      console.log(likes);
+      database.ref().set({
+        like:{
+          liked:likes
+        }
+      });
+
+    });
+
+
+  database.ref("like/liked").on("value",function(snapshot){
+    console.log("snapshot2= "+snapshot.val());
+    $("#likes").text("Likes: "+ snapshot.val());
+  });
+});
+
+
+
+$(document).on("click", "#dislike",function(){
+  var test= firebase.database().ref("like");
+  var dislikes;
+    test.on("child_added", function(snapshot){
+      console.log(snapshot.val());
+      likes = snapshot.val();
+      console.log(likes);
+      likes++;
+      console.log(likes);
+      database.ref().set({
+        like:{
+          liked:likes
+        }
+      });
+
+    });
+
+
+  database.ref("like/disliked").on("value",function(snapshot){
+    console.log("snapshot2= "+snapshot.val());
+    $("#dislikes").text("Dislikes: "+ snapshot.val());
+  });
+});
+
 
 
 
