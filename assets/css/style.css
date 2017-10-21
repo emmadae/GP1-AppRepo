@@ -1,16 +1,16 @@
 /* Body Background Styling */
 body{
   background-image: url("../images/background.jpg");
+  background-color:#282828;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size:100%;
-  min-height: 100%;
+
 }
 
-/* Map Settings */
-#map{
-  height:400px;
-  width: 25%;
+/* Specific Settings For Index.html */
+#body-index-html{
+  overflow: hidden;
 }
 
 
@@ -18,18 +18,17 @@ body{
 .nav ul{
   float: left;
   width:100%;
-  padding:15px;
+  padding:20px 15px;
 }
 
 .nav li{
   display: inline-block;
-  position: relative;
   float:left;
 
 }
 
 .line-brake-nav{
-  list-style-type: none;
+    list-style-type: none;
     text-decoration: none;
     color: white;
     font-size: 18px;
@@ -40,55 +39,58 @@ body{
     list-style-type: none;
     text-decoration: none;
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     font-family: "Raleway", sans-serif;
     margin: 15px;
 }
 
 .nav li a:hover {
     transition: ease-in-out .20s;
-    color:#81776E;
+    color:#282828;
     cursor: pointer;
 }
 
 .nav li a.active {
-  color:#81776E;
+  color:#282828;
 }
 
 
+/* Main Beans & Brews Logo & Search Button Link On Index.html -------------- */
 
-#beans-header{
-  font-family:"Merriweather",serif;
-  font-size:110px;
+img{
+  width:60%;
+  margin-left:1%;
+  margin-top:5.5%;
+}
+
+/* Button that connects the the Search.html page */
+#search-connect-btn {
+  background: none;
+  border:none;  
+  margin-left:-20%;
+}
+
+#search-connect-btn a {
+  list-style-type: none;
+  text-decoration: none;
+  border: 1px solid white;
+  font-family: "Raleway", sans-serif;
+  font-size: 22px;
   color:white;
-  margin-left:20%;
-  padding-top:7%;
- 
- 
+  text-align: center;
+  padding: 10px 15px; 
 }
 
-#and-header{
-  font-family:"Merriweather",serif;
-  font-size:200px;
-  color:gray;
-  margin-left:43%;
-  margin-top:-7%;
-
+#search-connect-btn a:hover {
+    list-style-type: none;
+  text-decoration: none;
+  color:#282828;
+  background-color:white;
 }
 
-#brews-header{
-  font-family:"Merriweather",serif;
-  font-size:110px;
-  color:white;
-  margin-left:27%;
-  padding-top:-10%;
-}
-
-
-
-/* REALLY FUCKING WET CODE --------------------------------------------------- */
+/* Line Load animation on the Index.html Page ------------------------------ */
 #content-index {
-  top:-100px;
+  top:-530px;
   height: 650px;
   margin: 0 auto;
   margin-left;
@@ -101,8 +103,6 @@ body{
   position: absolute; 
 }
 
-
-
 .line-1, .line-2, .line-3, .line-4, .line-5, .line-6,
 .line-7, .line-8, .line-9, .line-10, .line-11, .line-12,
 .line-13, .line-14, .line-15, .line-16, .line-17, .line-18,
@@ -113,6 +113,7 @@ body{
 }
 
 .line-1{
+  overflow:hidden;
   position: absolute;
   content: '';
   background-color: white;
@@ -125,11 +126,12 @@ body{
     animation-direction:left;
 }
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-2{
+  overflow:hidden;
   top:25px;
   position: absolute;
   content: '';
@@ -143,11 +145,12 @@ body{
     animation-direction:left;
 }
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-3{
+  overflow:hidden;
   top:50px;
   position: absolute;
   content: '';
@@ -161,11 +164,12 @@ body{
     animation-direction:left;
 }
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-4{
+  overflow:hidden;
   top:75px;
   position: absolute;
   content: '';
@@ -180,11 +184,12 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-5{
+  overflow:hidden;
   top:100px;
   position: absolute;
   content: '';
@@ -198,11 +203,12 @@ body{
     animation-direction:left;
 }
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-6{
+  overflow:hidden;
   top:125px;
   position: absolute;
   content: '';
@@ -217,12 +223,13 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 
 .line-7{
+  overflow:hidden;
   top:150px;
   position: absolute;
   content: '';
@@ -237,11 +244,12 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-8{
+  overflow:hidden;
   top:175px;
   position: absolute;
   content: '';
@@ -256,11 +264,12 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-9{
+  overflow:hidden;
   top:200px;
   position: absolute;
   content: '';
@@ -275,11 +284,12 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-10{
+  overflow:hidden;
   top:225px;
   position: absolute;
   content: '';
@@ -294,11 +304,12 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-11{
+  overflow:hidden;
   top:250px;
   position: absolute;
   content: '';
@@ -313,11 +324,12 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-12{
+  overflow:hidden;
   top:275px;
   position: absolute;
   content: '';
@@ -332,11 +344,12 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-13{
+  overflow:hidden;
   top:300px;
   position: absolute;
   content: '';
@@ -351,11 +364,12 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-14{
+  overflow:hidden;
   top:325px;
   position: absolute;
   content: '';
@@ -370,11 +384,12 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-15{
+  overflow:hidden;
   top:350px;
   position: absolute;
   content: '';
@@ -389,11 +404,12 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-16{
+  overflow:hidden;
   top:375px;
   position: absolute;
   content: '';
@@ -408,11 +424,12 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-17{
+  overflow:hidden;
   top:400px;
   position: absolute;
   content: '';
@@ -427,11 +444,12 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-18{
+  overflow:hidden;
   top:425px;
   position: absolute;
   content: '';
@@ -446,11 +464,12 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-19{
+  overflow:hidden;
   top:450px;
   position: absolute;
   content: '';
@@ -465,11 +484,12 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-20{
+  overflow:hidden;
   top:475px;
   position: absolute;
   content: '';
@@ -484,11 +504,12 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-21{
+  overflow:hidden;
   top:500px;
   position: absolute;
   content: '';
@@ -503,11 +524,12 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-22{
+  overflow:hidden;
   top:525px;
   position: absolute;
   content: '';
@@ -522,11 +544,12 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-23{
+  overflow:hidden;
   top:550px;
   position: absolute;
   content: '';
@@ -541,11 +564,12 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-24{
+  overflow:hidden;
   top:575px;
   position: absolute;
   content: '';
@@ -560,11 +584,12 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
 }
 
 .line-25{
+  overflow:hidden;
   top:600px;
   position: absolute;
   content: '';
@@ -579,8 +604,71 @@ body{
 }
 
 @keyframes slide {
-    from {right: -500%;}
+    from {right: -600px;}
     to {right: 0;}
+}
+
+
+/* SEARCH PAGE STYLING -------------------------------------------------------*/
+
+/* Map Settings */
+#map{
+  height:400px;
+  width: 40%;
+  float:right;
+  margin: -33.5% 5% 5% 5%;
+
+}
+
+/* page lightly faded overlay background */
+#body-background{
+  background-color: rgba(41, 41, 41, 0.75);
+  margin:5% 5%;
+  padding-top:5%;
+  padding-bottom:7%;
+}
+
+#search-nav .nav ul{
+  margin-top:-5%;
+}
+
+/* search input button */
+#search-btn{
+  list-style-type: none;
+  text-decoration: none;
+  background: none;
+  border: 1px solid white;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  color:white;
+  text-align: center;
+  padding: 10px 15px; 
+  margin-top:2%;
+}
+
+/* search form styling */
+#search-form{
+  border:1px solid white;
+  width:39%;
+  padding:3%;
+  color:white;
+  font-size:20px;
+  font-family:"Raleway", sans-serif;
+  margin:0% 0 5% 5%;
+}
+
+#search-form input, #search-form select{
+  color:#282828;
+  font-size:16px;
+  font-family:"Raleway", sans-serif;
+  border-radius:none;
+  margin:5px;
+}
+
+hr{
+  list-style-type:none;
+  text-decoration:none;
+  border:1px solid white;
 }
 
 
@@ -590,7 +678,16 @@ body{
 
 
 
-/* BEANS AND BREWS ANIMATION SYTLING ------------------------------------------ */
+
+
+
+
+
+
+
+
+
+/* BEANS AND BREWS ANIMATION SYTLING --------------------------------------- */
 
 #logo{
   width:50%;
@@ -917,51 +1014,68 @@ body{
 }
 
 
-/* SEARCH PAGE STYLING -------------------------------------------------------*/
-
-
-
-
-
-
-
 
 
 /* ABOUT PAGE STYLING ---------------------------------------------------------*/
+/* about us body section */
+.about-us-body{
+  color:white;
+  background-color: rgba(41, 41, 41, 0.75);
+  margin:5% 5%;
+  width:42.5%;
+  float:left;
+  text-align:center;
+}
+
 .about-us-body h1{
   font-family: "Merriweather", serif;
-  font-size: 50px;
-  padding:8% 4% 4% 4%;
-  color:#594B3E;
+  font-size: 35px;
+  margin:8% 4% 5% 4%;
+
 }
 
 .about-us-body p{
-  font-family:"Raleway", sans-serif;
-  color: #81776E;
+  font-family:"Open Sans", sans-serif;
   width:90%;
   font-size:24px;
-  margin-left:4%;
-  margin-right:6%
+  margin:0 5% 10% 5%;
 }
 
+/* connect with us body section */
+.about-us-connect{
+  color:white;
+  background-color: rgba(41, 41, 41, 0.75);
+  margin:5% 5% 5% 0;
+  width:42.5%;
+  float:left;
+  text-align:center;
+}
 
 .about-us-connect h2{
   font-family: "Merriweather", serif;
   font-size: 35px;
-  padding:8% 4% 2% 4%;
-  color:#594B3E;
+  margin:8% 4% 5% 4%;
 }
 
 #ph-about{
-   font-family:"Raleway", sans-serif;
-  color: #81776E;
+  font-family:"Open Sans", sans-serif;
   width:90%;
   font-size:24px;
-  margin-left:4%;
-  margin-right:6%
+  margin:0 5% 10% 5%;
 }
 
+#individual-conections p{
+  font-family:"Open Sans", sans-serif;
+  font-size:24px;
+  margin-bottom:3%;
+  margin-top:3%;
+}
 
+#individual-conections a i{
+  color:white;
+  font-size:32px;
+  padding:5px;
+}
 
 
 
