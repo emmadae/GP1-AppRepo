@@ -28,26 +28,26 @@ body{
 }
 
 .line-brake-nav{
-    list-style-type: none;
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    font-family: "Raleway", sans-serif;
+  list-style-type: none;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
 }
 
 .nav li a {
-    list-style-type: none;
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    font-family: "Raleway", sans-serif;
-    margin: 15px;
+  list-style-type: none;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+  margin: 15px;
 }
 
 .nav li a:hover {
-    transition: ease-in-out .20s;
-    color:#282828;
-    cursor: pointer;
+  transition: ease-in-out .20s;
+  color:#282828;
+  cursor: pointer;
 }
 
 .nav li a.active {
@@ -65,6 +65,7 @@ img{
 
 /* Button that connects the the Search.html page */
 #search-connect-btn {
+  display: none;
   background: none;
   border:none;  
   margin-left:-20%;
@@ -622,14 +623,14 @@ img{
 
 /* page lightly faded overlay background */
 #body-background{
-  background-color: rgba(41, 41, 41, 0.75);
-  margin:5% 5%;
+  background-color: rgba(41, 41, 41, 0.65);
+  margin:7% 5%;
   padding-top:5%;
   padding-bottom:7%;
 }
 
 #search-nav .nav ul{
-  margin-top:-5%;
+  margin-top:-7%;
 }
 
 /* search input button */
@@ -671,15 +672,34 @@ hr{
   border:1px solid white;
 }
 
+/* Like / Dislike Button */
+#like{
+  float: left;
+  list-style-type: none;
+  text-decoration: none;
+  background: none;
+  border: 1px solid white;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  color:white;
+  text-align: center;
+  padding: 10px 15px; 
+  margin-left: 10%;
+  
+}
 
-
-
-
-
-
-
-
-
+#dislike{
+  float:left;
+  list-style-type: none;
+  text-decoration: none;
+  background: none;
+  border: 1px solid white;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  color:white;
+  text-align: center;
+  padding: 10px 15px; 
+}
 
 
 
@@ -689,7 +709,7 @@ hr{
 
 /* BEANS AND BREWS ANIMATION SYTLING --------------------------------------- */
 
-#logo{
+/*#logo{
   width:50%;
   margin-left:20%;
 }
@@ -708,7 +728,7 @@ hr{
 
 #container div { position: absolute; }
 
-/* Beans Animation */
+ Beans Animation 
 .beans {
   display: none;
   position: absolute;
@@ -800,7 +820,7 @@ hr{
   -webkit-transform: rotate(30deg);
 }
 
-/* Pour Beer Streem */
+  Pour Beer Streem 
 .pour {
   position: absolute;
   left: 35%;
@@ -810,7 +830,7 @@ hr{
   border-radius: 10px
 }
 
-/* Large Outer Handel */
+  Large Outer Handel 
 #large-handel{
   border: 10px solid #FFF;
   border-radius: 0 50px 50px 0;
@@ -820,7 +840,7 @@ hr{
   width: 60px;
 }
 
-/* Smaller Inner Handel */
+   Smaller Inner Handel 
 #small-handel{
   border: 10px solid #FFF;
   border-radius: 0 30px 30px 0;
@@ -831,7 +851,7 @@ hr{
 
 }
 
-/* Beer Mug */
+   Beer Mug 
 #beaker {
   border: 10px solid #FFF;
   border-radius: 0 0 30px 30px;
@@ -856,7 +876,7 @@ hr{
 #beaker:after { right: -50px; }
 
 
-/* Beer Liquid */
+ Beer Liquid 
 #liquid {
   background-color: #edaf32;
   border: 10px solid #edaf32;
@@ -867,7 +887,7 @@ hr{
   width: 180px;
 }
 
-/* Beer Mug Lines - Faded */
+ Beer Mug Lines - Faded 
 .beer-line{
   background-color: rgba(255, 255, 255, 0.25);
   bottom: -225px;
@@ -899,7 +919,7 @@ hr{
   margin-left: 142px;
 }
 
-/* Beer Bubbles Animation */
+Beer Bubbles Animation 
 #liquid .bubble {
   -webkit-animation-name: bubble;
   -webkit-animation-iteration-count: infinite;
@@ -955,7 +975,7 @@ hr{
   -webkit-animation-duration: 800ms;
 }
 
-/* Foam */
+  Foam 
 .beer-foam {
   position: absolute;
   bottom: 10px;
@@ -1000,7 +1020,7 @@ hr{
   left: 160px;
 }
 
-/* Fill Me Up Button Formating */
+ Fill Me Up Button Formating 
 #fill-me-up{
   list-style-type: none;
   text-decoration: none;
@@ -1011,7 +1031,7 @@ hr{
   font-size: 18px;
   padding:10px 15px;
   margin-left:30%;
-}
+}*/
 
 
 
@@ -1020,9 +1040,10 @@ hr{
 /* about us body section */
 .about-us-body{
   color:white;
-  background-color: rgba(41, 41, 41, 0.75);
-  margin:5% 5%;
+  background-color: rgba(41, 41, 41, 0.65);
+  margin:3% 5% 4% 5%;
   width:42.5%;
+  height:400px;
   float:left;
   text-align:center;
 }
@@ -1030,7 +1051,7 @@ hr{
 .about-us-body h1{
   font-family: "Merriweather", serif;
   font-size: 35px;
-  margin:8% 4% 5% 4%;
+  margin:8% 4% 4%;
 
 }
 
@@ -1044,9 +1065,10 @@ hr{
 /* connect with us body section */
 .about-us-connect{
   color:white;
-  background-color: rgba(41, 41, 41, 0.75);
-  margin:5% 5% 5% 0;
+  background-color: rgba(41, 41, 41, 0.65);
+  margin:3% 5% 4% 0;
   width:42.5%;
+  height:400px;
   float:left;
   text-align:center;
 }
@@ -1064,6 +1086,13 @@ hr{
   margin:0 5% 10% 5%;
 }
 
+.about-us-connect i{
+  color:white;
+  text-align: center;
+  font-size:48px;
+  margin:6% 0 16% 0;
+}
+
 #individual-conections p{
   font-family:"Open Sans", sans-serif;
   font-size:24px;
@@ -1071,19 +1100,48 @@ hr{
   margin-top:3%;
 }
 
-#individual-conections a i{
+#individual-conections a{
+  list-style-type:none;
+  text-decoration:none;
   color:white;
   font-size:32px;
   padding:5px;
 }
 
+#individual-conections a i:hover{
+  text-shadow: 0 0 10px white;
+}
 
+#emma, #kevin, #david, #carlos {
+  background-color: rgba(41, 41, 41, 0.65);
+  color:white;
+  text-align:center;
+  padding:2%;
+  float:left;
+  width: 17%;
+  margin:1%;
+}
 
+#emma{
+  margin-left:5%;
+  float:left;
+}
+
+#carlos{
+  margin-right:5%;
+}
 
 /* INSTRUCTIONS PAGE STYLING --------------------------------------------------*/
 
+#instructions-back{
+  background-color: rgba(41, 41, 41, 0.65);
+  width:90%;
+  margin:5% 5%;
+  color:white;
+}
 
-
-
+#instructions-nav .nav ul{
+  margin-top:-5%;
+}
 
 
