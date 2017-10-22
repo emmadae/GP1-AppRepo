@@ -26,38 +26,51 @@
 	<body>
 
 	<!-- Header & Navigation Bar For Website -->
-		<header>
+		<header id="search-nav">
 			<nav class="nav">
 				<ul class="list-items">
-					<li><a href="instructions.html"> HOW IT WORKS </a></li>
-					<li class="line-brake-nav"> | </li>
-					<li><a href="about.html"> BEANS &amp; BREWS </a></li>
+					<li><a href="index.html"> HOME </a></li>
 					<li class="line-brake-nav"> | </li>
 					<li><a href="search.html" class="active"> SEARCH </a></li>
 					<li class="line-brake-nav"> | </li>
-					<li><a href="index.html"> HOME </a></li>
+					<li><a href="about.html"> BEANS &amp; BREWS </a></li>
+					<li class="line-brake-nav mobile-only"> | </li>
+					<li class="mobile-only"><a href="instructions.html"> HOW IT WORKS </a></li>
 	        	</ul>
 			</nav>
 		</header>
 
+
 	<!-- Iniput Form For Search Results -->
-		<section>
-			<div id="map">
-			</div>
-			<form>
+		<section id="body-background">
+			<form id="search-form">
+			<!--  Selection For Beverage Choice -->
+			  	<div class="form-group">
+			    	<label for="destination-select"> COFFEE/BEER/BOTH? </label>
+			    	<select id="destination-select">
+				        <option selected> Beverage Choice... </option>
+				        <option value="1">Coffee</option>
+				        <option value="2">Brews</option>
+				        <option value="3">Both</option>
+				    </select>
+			  	</div>
+
 			<!-- Search By Name Input Field -->
 			  	<div class="form-group">
-			  		<label for="search"> Search By Name </label>
+			  		<label for="search"> SEARCH BY NAME </label>
 			    	<input type="search" id="search"  placeholder="Search By Name">
-			  	</div>
+			  	</div> 
+			  	<hr>
+
 			<!--  Zipcode Search Input Field -->
 			  	<div class="form-group">
-			    	<label for="zipcode"> Zipcode </label>
+			    	<label for="zipcode"> ZIPCODE </label>
 			    	<input type="search" id="zipcode" placeholder="Zipcode">
 			  	</div>
+
 			<!--  Selection For Miles Away Distance -->
 			  	<div class="form-group">
-			    	<label for="miles-away"> Miles Away </label>
+			    	<label for="miles-away"> MILES AWAY </label>
 			    	<select id="miles-away">
 				        <option selected> Miles Away </option>
 				        <option value="1">1</option>
@@ -69,34 +82,33 @@
 				        <option value="7">30</option>
 				    </select>
 			  	</div>
-			<!--  Selection For Beverage Choice -->
-			  	<div class="form-group">
-			    	<label for="destination-select"> Coffee, Beer, or Both? </label>
-			    	<select id="destination-select">
-				        <option selected> Beverage Choice... </option>
-				        <option value="1">Coffee</option>
-				        <option value="2">Brews</option>
-				        <option value="3">Both</option>
-				    </select>
-			  	</div>
+				<hr>
+				
 			<!-- Search Button -->
-			  	<button type="search" id="search-btn"> Search </button>
+			  	<button type="search" id="search-btn"> SEARCH </button>
 			</form>
+
+			<!-- Map Appears Here -->
+			<div id="map"> </div>
+
+
 		</section>
 
+
+
 	<!-- Empty Div For Google Maps -->
-		<section>
-			<div class="map-here"> </div>
+		<section id="search-results">
+			
 			<div id="name"></div>
 			<div id="rating"></div>
 			<div id="price-level"></div>
-			<button id="test">Test</button>
-			<button id="like">Like</button>
-			<p id="likes"></p>
-			<button id="dislike">Dislike</button>
-			<p id="dislikes"></p>
+			 <!-- <button id="test">Test</button> -->
+			<button id="like">LIKE <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button>
+			<p id="likes"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> </p>
+			<button id="dislike">DISLIKE <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> </button>
+			<p id="dislikes"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></p>
 		</section>
-
+		
 
 
 

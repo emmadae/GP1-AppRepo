@@ -1,32 +1,6 @@
-// Document Ready
-$(document).ready(function() {
-    // BEER AND BEANS FUNCTION - Fill'er up
-    $ ("#fill-me-up").click(function(){
-        // Poor Drink Function
-        $('.pour').delay(2000).animate({
-            height: '360px'
-            }, 1500).delay(1600).slideUp(500);
-        // Beans Animation
-        $('.beans').fadeIn(4000);
 
-        // Liquid Fills Up
-        $('#liquid').delay(3400).animate({
-            height: '225px'
-            }, 2500);
+// WORKING SCRIPT--------------------------------------------------------------
 
-        // Beer foam rises
-        $('.beer-foam').delay(3400).animate({
-            bottom: '250px'
-            }, 2500);
-    });
-    // on click funtion for navigation bar to appear on click
-    $('#nav-icon3').click(function(){
-        $(".list-items").slideToggle(800);
-    });
-});
-$(window).load(function() {
-    $("#content-index").show();
-});
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDRQXaMgkueFCWKSOynK2w_2e81_J7xUUM",
@@ -151,4 +125,62 @@ $(document).ready(function(){
     var destinationSelect = $("#destination-select>option:selected").text();
     var kmAway = miAway * 1.60934;  
   });
+});
+
+
+
+
+
+
+
+//------------------------------------------------------------------------------
+
+
+
+
+// SCRIPT FOR WEBSITE CSS ANIMATION --------------------------------------------
+// Document Ready
+$(document).ready(function() {
+
+
+    // // BEER AND BEANS FUNCTION - Fill'er up
+    // $ ("#fill-me-up").click(function(){
+    //     // Poor Drink Function
+    //     $('.pour').delay(2000).animate({
+    //         height: '360px'
+    //         }, 1500).delay(1600).slideUp(500);
+    //     // Beans Animation
+    //     $('.beans').fadeIn(4000);
+
+    //     // Liquid Fills Up
+    //     $('#liquid').delay(3400).animate({
+    //         height: '225px'
+    //         }, 2500);
+
+    //     // Beer foam rises
+    //     $('.beer-foam').delay(3400).animate({
+    //         bottom: '250px'
+    //         }, 2500);
+    // });
+
+
+    // on click funtion for navigation bar to appear on click
+    $('#nav-icon3').click(function(){
+        $(".list-items").slideToggle(800);
+    });
+
+
+    $(window).load(function() {
+        $("#content-index").show();
+        $("#search-connect-btn").fadeIn(2500);
+    });
+
+    $("#like").click(function () {
+      $("#likes").show(200);
+    });
+
+    $("#dislike").click(function () {
+      $("#dislikes").show(200);
+    });
+
 });
