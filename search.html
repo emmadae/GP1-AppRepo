@@ -34,15 +34,15 @@
 					<li><a href="search.html" class="active"> SEARCH </a></li>
 					<li class="line-brake-nav"> | </li>
 					<li><a href="about.html"> BEANS &amp; BREWS </a></li>
-					<li class="line-brake-nav"> | </li>
-					<li><a href="instructions.html"> HOW IT WORKS </a></li>
+					<li class="line-brake-nav mobile-only"> | </li>
+					<li class="mobile-only"><a href="instructions.html"> HOW IT WORKS </a></li>
 	        	</ul>
 			</nav>
 		</header>
 
-	<section id="body-background">
+
 	<!-- Iniput Form For Search Results -->
-		<section>
+		<section id="body-background">
 			<form id="search-form">
 			<!--  Selection For Beverage Choice -->
 			  	<div class="form-group">
@@ -87,26 +87,28 @@
 			<!-- Search Button -->
 			  	<button type="search" id="search-btn"> SEARCH </button>
 			</form>
+
+			<!-- Map Appears Here -->
+			<div id="map"> </div>
+
+
 		</section>
 
-		<!-- Map Appears Here -->
-			<div id="map"> </div>
 
 
 	<!-- Empty Div For Google Maps -->
 		<section id="search-results">
-			<div class="map-here"> </div>
+			
 			<div id="name"></div>
 			<div id="rating"></div>
 			<div id="price-level"></div>
 			 <!-- <button id="test">Test</button> -->
 			<button id="like">LIKE <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button>
-			<p id="likes"></p>
+			<p id="likes"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> </p>
 			<button id="dislike">DISLIKE <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> </button>
-			<p id="dislikes"></p>
+			<p id="dislikes"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></p>
 		</section>
 		
-	</section>
 
 
 
