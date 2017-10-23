@@ -73,7 +73,7 @@ $(document).on("click", "#dislike",function(){
 var search;
 var zipcode;
 var mAway = 1609;
-var destiantionSelect = 'cafe';
+var destinationSelect = 'cafe';
 //updates map using Users Search Parameters
 $(document).ready(function(){
   $("#search-btn").on("click", function(event){
@@ -117,7 +117,7 @@ $(document).ready(function(){
         service.nearbySearch({
           location: austin,
           radius: mAway,
-          type: [destiantionSelect]
+          type: [destinationSelect]
         }, callback);
       }
 
@@ -133,11 +133,12 @@ $(document).ready(function(){
         var placeLoc = place.geometry.location;
         var marker = new google.maps.Marker({
           map: map,
+          placeId: place.place_id,
           position: place.geometry.location
         });
 
         google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.name);
+          infowindow.setContent(place.name + "<br>" + place.rating + "<br>" + place.radius);
           infowindow.open(map, this);
         });
       }
