@@ -72,42 +72,52 @@ $(document).on("click", "#dislike",function(){
 //Users Search Parameters
 var search;
 var zipcode;
-var miAway;
-var destiantionSelect;
-
+var mAway = 1609;
+var destiantionSelect = 'cafe';
+//updates map using Users Search Parameters
 $(document).ready(function(){
   $("#search-btn").on("click", function(event){
     event.preventDefault();
-    var kmAway = miAway * 1.60934;
+    //sets distance converting miles to meters
+    miAway = parseInt($("#miles-away>option:selected").text());
+    mAway = miAway*1609;
+
+    //sets categories based on user specificity
+    if($("#destination-select>option:selected").text()==="Coffee"){
+        destinationSelect = "cafe";
+    }else if($("#destination-select>option:selected").text()==="Brews"){
+      destinationSelect = "bar";
+    //looking for both not functioning properly
+    }else{
+      destinationSelect = "'cafe', 'bar'";
+    }
+
+    //not implemented
     search = $("#search").val();
     zipcode = $("#zipcode").val();
-    miAway = $("#miles-away>option:selected").text();
-    destinationSelect = $("#destination-select>option:selected").text();
-    console.log(search);
 
-    initialize();
+    //loads map with new user specs
+    initMap();
   });
 });
 
       var map;
       var infowindow;
 
-
-
       function initMap() {
-        var pyrmont = {lat: 30.286, lng: -97.731};
+        var austin = {lat: 30.286, lng: -97.731};
 
         map = new google.maps.Map(document.getElementById('map'), {
-          center: pyrmont,
+          center: austin,
           zoom: 15
         });
 
         infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
-          location: pyrmont,
-          radius: 1000,
-          type: ['bar']
+          location: austin,
+          radius: mAway,
+          type: [destiantionSelect]
         }, callback);
       }
 
