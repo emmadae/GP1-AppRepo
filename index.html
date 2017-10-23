@@ -22,28 +22,45 @@
 
 	<!-- Header & Navigation Bar For Website -->
 		<header>
-			<nav class="nav">
-				<ul class="list-items">
-					<li><a href="index.html" class="active"> HOME </a></li>
-					<li class="line-brake-nav"> | </li>
-					<li><a href="search.html"> SEARCH </a></li>
-					<li class="line-brake-nav"> | </li>
-					<li><a href="about.html"> BEANS &amp; BREWS </a></li>
-					<li class="line-brake-nav mobile-only"> | </li>
-					<li class="mobile-only"><a href="instructions.html"> HOW IT WORKS </a></li>
-		        </ul>
-			</nav>
+			<i id="hamburger-nav" class="fa fa-bars mobile-only" aria-hidden="true"></i>
+
+			<div id="overlay">
+				<i id="exit-btn" class="fa fa-times" aria-hidden="true"></i>
+
+				<nav class="nav">
+					<ul class="list-items overlay-content">
+						<li><a href="index.html" class="active"> HOME </a></li>
+						<li class="line-brake-nav"> | </li>
+						<li><a href="search.html"> SEARCH </a></li>
+						<li class="line-brake-nav"> | </li>
+						<li><a href="about.html"> BEANS &amp; BREWS </a></li>
+						<li class="line-brake-nav mobile-only"> | </li>
+						<li class="mobile-only"><a href="instructions.html"> HOW IT WORKS </a></li>
+			        </ul>
+				</nav>
+			</div>
 		</header>
 
+		 <div id="overlay">
+		     <div>
+		          <p>Content you want the user to see goes here.</p>
+		     </div>
+		</div>
 
-	<!-- BEANS & BREWS Arched Title -->
+
+
+
+	<!-- BEANS & BREWS Logo Title -->
 		<div>
-			<img src="assets/images/logo.jpg" alt="Beans and Brews Title Logo">
+			<!-- WEB ONLY Body Logo Image -->
+			<img class="web-only" src="assets/images/logo-web.jpg" alt="Beans and Brews Title Logo">
+			<!-- MOBILE ONLY Body Logo Image -->
+			<img class="mobile-only" src="assets/images/logo-mobile.jpg" alt="Beans and Brews Title Logo">
 			<button type="button" id="search-connect-btn"> <a href="search.html">SEARCH </a> </button>
 		</div>
 
 
-			<div id="content-index">
+			<div class="web-only" id="content-index">
 				<div class="line-1"> </div>
 				<div class="line-2"> </div>
 				<div class="line-3"> </div>
@@ -73,8 +90,6 @@
 				<div class="line-27"> </div>
 				<div class="line-28"> </div>
 				<div class="line-29"> </div>
-				<div class="line-30"> </div>
-				<div class="line-31"> </div>
 			</div>
 
 
