@@ -51,9 +51,9 @@ $(document).on("click", "#like", function(){
     $("#likes").text("Likes: "+ (parseInt(snapshot.val())+1));
   });
 });
-// //
-// //
-// //
+
+
+
 $(document).on("click", "#dislike",function(){
   var bad= firebase.database().ref("disliked");
   var dislikes;
@@ -74,14 +74,30 @@ var search;
 var zipcode;
 var mAway = 1609;
 var destiantionSelect = 'cafe';
+var drawDistance = 14;
 //updates map using Users Search Parameters
 $(document).ready(function(){
   $("#search-btn").on("click", function(event){
     event.preventDefault();
+    $("#searchButtons").html("");
     //sets distance converting miles to meters
     miAway = parseInt($("#miles-away>option:selected").text());
     mAway = miAway*1609;
-
+    if(miAway === 1){
+      drawDistance = 14;
+    }else if(miAway === 5){
+      drawDistance = 12;
+    }else if(miAway === 10){
+      drawDistance = 11;
+    }else if(miAway === 15){
+      drawDistance = 10;
+    }else if(miAway === 20){
+      drawDistance = 10;
+    }else if(miAway === 25){
+      drawDistance = 10;
+    }else if(miAway === 30){
+      drawDistance = 10;
+    }
     //sets categories based on user specificity
     if($("#destination-select>option:selected").text()==="Coffee"){
         destinationSelect = "cafe";
@@ -109,7 +125,7 @@ $(document).ready(function(){
 
         map = new google.maps.Map(document.getElementById('map'), {
           center: austin,
-          zoom: 15
+          zoom: drawDistance
         });
 
         infowindow = new google.maps.InfoWindow();
@@ -123,8 +139,16 @@ $(document).ready(function(){
 
       function callback(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
-          for (var i = 0; i < results.length; i++) {
+          for (var i = 0; i < results.length; i++){
             createMarker(results[i]);
+            // console.log(results[i]);
+            if(i<10){
+            $("#searchButtons").append("<button id="+results[i].id+">"+results[i].name+"</button>");
+          }
+            // $("#search-results").append("<div class=results>"+results[i].name+": Rated: "+results[i].rating+"</div>");
+
+            // $("#search-results").append("<div>"+results[i.name+"</div>"]);
+
           }
         }
       }
@@ -171,6 +195,8 @@ initMap();
     handleLocationError(false, infoWindow, map.getCenter());
   }
 
+
+//generates divs to hold information regarding best search results
 
 
 
@@ -245,4 +271,3 @@ $(document).ready(function() {
 
 
 });
-
