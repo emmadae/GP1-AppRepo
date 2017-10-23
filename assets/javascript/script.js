@@ -138,7 +138,7 @@ $(document).ready(function(){
         });
 
         google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.name + "<br>" + place.rating + "<br>" + place.radius + " miles away");
+          infowindow.setContent(place.name + "<br>" + "Rating: " place.rating + "<br>" + place.radius + " miles away");
           infowindow.open(map, this);
         });
       }
