@@ -22,18 +22,27 @@
 	<body>
 
 	<!-- Header & Navigation Bar For Website -->
-		<header id="instructions-nav">
-			<nav class="nav">
-				<ul class="list-items">
-					<li><a href="index.html"> HOME </a></li>
-					<li class="line-brake-nav"> | </li>
-					<li><a href="search.html"> SEARCH </a></li>
-					<li class="line-brake-nav"> | </li>
-					<li><a href="about.html"> BEANS &amp; BREWS </a></li>
-					<li class="line-brake-nav mobile-only"> | </li>
-					<li class="mobile-only"><a href="instructions.html" class="active"> HOW IT WORKS </a></li>
-	        	</ul>
-			</nav>
+		<header>
+			<i id="hamburger-nav" class="fa fa-bars mobile-only" aria-hidden="true"></i>
+
+			<div id="overlay">
+				<div id="show-please">
+
+				<i id="exit-btn" class="fa fa-times" aria-hidden="true"></i>
+
+					<nav class="nav">
+						<ul class="list-items overlay-content">
+							<li><a href="index.html"> HOME </a></li>
+							<li class="line-brake-nav"> | </li>
+							<li><a href="search.html"> SEARCH </a></li>
+							<li class="line-brake-nav"> | </li>
+							<li><a href="about.html"> BEANS &amp; BREWS </a></li>
+							<li class="line-brake-nav"> | </li>
+							<li class="mobile-only" class="active"><a href="instructions.html"> HOW IT WORKS </a></li>
+				        </ul>
+					</nav>
+				</div>
+			</div>
 		</header>
 
 	<section id="instructions-back">
