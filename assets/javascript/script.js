@@ -56,7 +56,7 @@ $(window).load(function() {
   // var baseURLGM = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" +
   //   keyGM + "&q=";
 
-$(document).on("click", "#test",function(){
+$(document).on("click", "#reset",function(){
   database.ref().set({
       liked:0,
       disliked:0
@@ -65,9 +65,9 @@ $(document).on("click", "#test",function(){
 
 
 $(document).on("click", "#like", function(){
-  var test= firebase.database().ref("liked");
+  var good= firebase.database().ref("liked");
   var likes;
-    test.once("value", function(snapshot){
+    good.once("value", function(snapshot){
       likes = snapshot.val();
       likes++;
       database.ref().update({liked:likes});
@@ -81,9 +81,9 @@ $(document).on("click", "#like", function(){
 // //
 // //
 $(document).on("click", "#dislike",function(){
-  var test= firebase.database().ref("disliked");
+  var bad= firebase.database().ref("disliked");
   var dislikes;
-    test.once("value", function(snapshot){
+    bad.once("value", function(snapshot){
       dislikes = snapshot.val();
       dislikes++;
       database.ref().update({disliked:dislikes});
@@ -95,60 +95,100 @@ $(document).on("click", "#dislike",function(){
 });
 
 
-
-
-
-
-
-
-// $("#test").click(runGPQuery());
-//
-//
-//
-// function runGPQuery(httpGP) {
-// //GM ajax call
-// console.log("running");
-//   $.ajax({
-//     url: httpGP,
-//     method: "GET"
-//   }).done(function(dataGM){
-//     console.log("finished");
-//     //test queryURL
-//     console.log("------------------------------------");
-//     console.log("URL: " + httpGP);
-//     console.log("------------------------------------");
-//     //test dataGM
-//     console.log("info: "+dataGM);
-//     console.log("------------------------------------");
-//
-//   });
-// }
-
-
-//note: we'll probably want to add variables here to try and modify what shows up on the map. Reading documentation will be helpful here!!!
-function initMap() {
-  //sets coordinates to center the map on austin
-  var uluru = {lat: 30.286, lng: -97.731};
-  //sets up a new map. Targets id="map"
-  var map = new google.maps.Map(document.getElementById("map"), {
-  //zoom distance. 10 roughly city size
-    zoom: 10,
-    center: uluru
-  });
-  //creates the marker locator on the google map. Probably not necessary
-  var marker = new google.maps.Marker({
-    position: uluru,
-    // map: maptext
-  });
-}
+//Users Search Parameters
+var search;
+var zipcode;
+var miAway;
+var destiantionSelect;
 
 $(document).ready(function(){
   $("#search-btn").on("click", function(event){
     event.preventDefault();
-    var search = $("#search").val();
-    var zipcode = $("#zipcode").val();
-    var miAway = $("#miles-away>option:selected").text();
-    var destinationSelect = $("#destination-select>option:selected").text();
-    var kmAway = miAway * 1.60934;  
+    var kmAway = miAway * 1.60934;
+    search = $("#search").val();
+    zipcode = $("#zipcode").val();
+    miAway = $("#miles-away>option:selected").text();
+    destinationSelect = $("#destination-select>option:selected").text();
+    console.log(search);
+
+    initialize();
   });
 });
+
+      var map;
+      var infowindow;
+
+
+
+      function initMap() {
+        var pyrmont = {lat: 30.286, lng: -97.731};
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: pyrmont,
+          zoom: 15
+        });
+
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          location: pyrmont,
+          radius: 1000,
+          type: ['bar']
+        }, callback);
+      }
+
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
+
+      function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+        });
+      }
+
+
+initMap();
+
+
+
+
+  //adds functionality to map which finds the users location
+  infoWindow = new google.maps.InfoWindow(document.getElementById("map"));
+  //creates the marker locator on the google map. Probably not necessary
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      console.log("looking");
+      pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Location found.');
+      infoWindow.open(map);
+      map.setCenter(pos);
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+
+
+
+
+
+//onclick sets variables to user inputs
