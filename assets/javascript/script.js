@@ -87,6 +87,7 @@ $(document).ready(function(){
         destinationSelect = "cafe";
     }else if($("#destination-select>option:selected").text()==="Brews"){
       destinationSelect = "bar";
+    //looking for both not functioning properly
     }else{
       destinationSelect = "'cafe', 'bar'";
     }
