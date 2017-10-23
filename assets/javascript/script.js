@@ -185,7 +185,7 @@ initMap();
 
 // SCRIPT FOR WEBSITE CSS ANIMATION --------------------------------------------
 // Document Ready
-$(document).ready(function() {
+
 
 
     // // BEER AND BEANS FUNCTION - Fill'er up
@@ -216,8 +216,8 @@ $(document).ready(function() {
 
 
     $(window).load(function() {
-        $("#content-index").show();
-        $("#search-connect-btn").fadeIn(2500);
+      $("#content-index").show();
+      $("#search-connect-btn").fadeIn(2500);
     });
 
     $("#like").click(function () {
@@ -233,16 +233,13 @@ $(document).ready(function() {
 
     // overlay navigation menu
     $("#hamburger-nav").click(function() {
-      $(".overlay-content").style.width = "100%";
+      $("#overlay").show();
     });
 
     $("#exit-btn").click(function() {
-      $(".overlay-content").style.width = "0%";
+      $("#overlay").hide();
     });
 
 
 
-
-
-});
 

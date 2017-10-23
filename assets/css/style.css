@@ -1345,134 +1345,80 @@ body{
 }
 
 
-/*========================================*/
+/* NAV MENU OVERLAY ----------------------------------------------------------- */
 #overlay {
-     /*visibility: hidden;*/
-     position: absolute;
-     left: 0px;
-     top: 0px;
-     width:100%;
-     height:100%;
-     text-align:center;
-     z-index: 1000;
+  display: none;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width:100%;
+  height:100%;
+  text-align:center;
+  z-index: 1000;
+}
+
+#overlay div {
+  height: 350px;
+  width:85%;
+  margin:5% 10% 5% 5%;
+  background-color: #fff;
+  border:1px solid white;
+  padding:15px;
+  text-align:center;
 }
 
 
+#exit-btn{
+  font-size:28px;
+  margin-top:2%;
+  /* rotate on hover */
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+          transition:         transform .5s ease-in-out;
+} 
 
-
-
-
-
-
-
-#overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0, 0.9);
-    overflow-x: hidden;
-    transition: 0.7s;
+#exit-btn:hover {
+  cursor: pointer;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
-
-.overlay-content {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
 }
-
-#overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-#overlay a:hover, #overlay a:focus {
-    color: #f1f1f1;
-}
-
-#overlay #exit-btn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-}
-
-@media screen and (max-height: 450px) {
-  #overlay a {font-size: 20px}
-  #overlay #exit-btn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .nav ul{
-  display: none;
-
-  /*edit*/
-  float: left;
+  /*display: none;*/
   width:100%;
   padding:20px 15px;
+  margin-top:5%;
+
 }
 
 
 .nav li{
-  display: inline-block;
-  float:left;
+  display: block;
+  text-align:center;
+  width:90%;
+  margin-top:1.5%;
+ 
 
 }
 
 .line-brake-nav{
-  list-style-type: none;
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  font-family: "Raleway", sans-serif;
+  display:none;
 }
 
 .nav li a {
-  list-style-type: none;
-  text-decoration: none;
-  color: white;
-  font-size: 20px;
-  font-family: "Raleway", sans-serif;
-  margin: 15px;
+  color: black;
+  font-size: 32px;
 }
 
 .nav li a:hover {
-  transition: ease-in-out .20s;
-  color:#282828;
-  cursor: pointer;
-  text-shadow: 0 0 20px white;
+  color:#DED5D3;
+  text-shadow: 0 0 25px #DED5D3;
 }
 
 .nav li a.active {
-  color:#282828;
-  text-shadow: 0 0 20px white;
+  color:#DED5D3;
+  text-shadow: 0 0 25px #DED5D3;
 }
 
 
