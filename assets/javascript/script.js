@@ -183,4 +183,19 @@ $(document).ready(function() {
       $("#dislikes").show(200);
     });
 
+
+
+    // overlay navigation menu
+    $("#hamburger-nav").click(function() {
+      $(".overlay-content").style.width = "100%";
+    });
+
+    $("#exit-btn").click(function() {
+      $(".overlay-content").style.width = "0%";
+    });
+
+
+
+
+
 });
