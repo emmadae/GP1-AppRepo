@@ -1,4 +1,77 @@
 
+// SCRIPT FOR WEBSITE CSS ANIMATION --------------------------------------------
+// Document Ready
+
+
+
+    // // BEER AND BEANS FUNCTION - Fill'er up
+    // $ ("#fill-me-up").click(function(){
+    //     // Poor Drink Function
+    //     $('.pour').delay(2000).animate({
+    //         height: '360px'
+    //         }, 1500).delay(1600).slideUp(500);
+    //     // Beans Animation
+    //     $('.beans').fadeIn(4000);
+
+    //     // Liquid Fills Up
+    //     $('#liquid').delay(3400).animate({
+    //         height: '225px'
+    //         }, 2500);
+
+    //     // Beer foam rises
+    //     $('.beer-foam').delay(3400).animate({
+    //         bottom: '250px'
+    //         }, 2500);
+    // });
+
+
+    // on click funtion for navigation bar to appear on click
+    $('#nav-icon3').click(function(){
+        $(".list-items").slideToggle(800);
+    });
+
+
+    $(window).load(function() {
+      $("#content-index").show();
+      $("#search-connect-btn").fadeIn(2000);
+    });
+
+    $("#like").click(function () {
+      $("#likes").show(200);
+    });
+
+    $("#dislike").click(function () {
+      $("#dislikes").show(200);
+    });
+
+
+
+
+    // overlay navigation menu
+    $("#hamburger-nav").click(function() {
+      $("#overlay").show();
+    });
+
+    $("#exit-btn").click(function() {
+      $("#overlay").hide();
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-----------------------------------------------------------------------------
 // WORKING SCRIPT--------------------------------------------------------------
 
 // Initialize Firebase
@@ -119,6 +192,9 @@ $(document).ready(function(){
   });
 });
 
+
+
+
       var map;
       var infowindow;
       var locationId= [];
@@ -147,11 +223,12 @@ $(document).ready(function(){
         var placeLoc = place.geometry.location;
         var marker = new google.maps.Marker({
           map: map,
+          placeId: place.place_id,
           position: place.geometry.location
         });
 
         google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.name);
+          infowindow.setContent(place.name + "<br>" + "Rating: " + place.rating + "/5" + "<br>" + place.radius + " miles away");
           infowindow.open(map, this);
         });
       }
