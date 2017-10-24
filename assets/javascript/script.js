@@ -148,7 +148,7 @@ $(document).on("click", "#dislike",function(){
 var search;
 var zipcode;
 var mAway = 1609;
-var destiantionSelect = 'cafe';
+var destinationSelect = 'bar';
 var drawDistance = 14;
 //updates map using Users Search Parameters
 $(document).ready(function(){
@@ -214,11 +214,12 @@ $(document).ready(function(){
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
           location: austin,
-          radius: mAway,
+          rankBy: google.maps.places.RankBy.DISTANCE,
+          // radius: mAway,
           type: [destinationSelect]
         }, callback);
       }
-
+// [destiantionSelect]
       function createMarker(place) {
         var placeLoc = place.geometry.location;
         var marker = new google.maps.Marker({
@@ -241,7 +242,7 @@ initMap();
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           for (var i = 0; i < results.length; i++){
             createMarker(results[i]);
-            // console.log(results[i]);
+            console.log(results[i]);
             if(i<10){
             $("#searchButtons").append("<button id="+results[i].id+" class='searchBtn'>"+results[i].name+"</button>");
             locationId.push(results[i].id);
@@ -250,9 +251,6 @@ initMap();
             locationVicinity.push(results[i].vicinity);
             // console.log(locationName);
           }}}}
-
-// results[i].name
-
 
 
 $(document).on("click", ".searchBtn", function(){
@@ -322,11 +320,6 @@ var btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-    modal.style.display = "block";
-};
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
