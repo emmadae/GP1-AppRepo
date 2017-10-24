@@ -26,23 +26,32 @@
 	<body>
 
 	<!-- Header & Navigation Bar For Website -->
-		<header id="search-nav">
-			<nav class="nav">
-				<ul class="list-items">
-					<li><a href="index.html"> HOME </a></li>
-					<li class="line-brake-nav"> | </li>
-					<li><a href="search.html" class="active"> SEARCH </a></li>
-					<li class="line-brake-nav"> | </li>
-					<li><a href="about.html"> BEANS &amp; BREWS </a></li>
-					<li class="line-brake-nav mobile-only"> | </li>
-					<li class="mobile-only"><a href="instructions.html"> HOW IT WORKS </a></li>
-	        	</ul>
-			</nav>
+		<header>
+			<i id="hamburger-nav" class="fa fa-bars mobile-only ham-nav-search" aria-hidden="true"></i>
+
+			<div id="overlay">
+				<div id="show-please">
+
+				<i id="exit-btn" class="fa fa-times" aria-hidden="true"></i>
+
+					<nav class="nav">
+						<ul class="list-items overlay-content">
+							<li><a href="index.html"> HOME </a></li>
+							<li class="line-brake-nav"> | </li>
+							<li><a href="search.html" class="active"> SEARCH </a></li>
+							<li class="line-brake-nav"> | </li>
+							<li><a href="about.html"> BEANS &amp; BREWS </a></li>
+							<li class="line-brake-nav"> | </li>
+							<li class="mobile-only"><a href="instructions.html"> HOW IT WORKS </a></li>
+				        </ul>
+					</nav>
+				</div>
+			</div>
 		</header>
 
 
 	<!-- Iniput Form For Search Results -->
-		<section id="body-background">
+		<div id="body-background">
 			<form id="search-form">
 			<!--  Selection For Beverage Choice -->
 			  	<div class="form-group">
@@ -92,7 +101,7 @@
 			<div id="map"> </div>
 
 
-		</section>
+		</div>
 
 
 
