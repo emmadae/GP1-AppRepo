@@ -30,6 +30,8 @@
   // var baseURLGM = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" +
   //   keyGM + "&q=";
 
+
+
 $(document).on("click", "#reset",function(){
   database.ref().set({
       liked:0,
@@ -119,6 +121,10 @@ $(document).ready(function(){
 
       var map;
       var infowindow;
+      var locationId= [];
+      var locationName= [];
+      var locationRating=[];
+      var locationVicinity=[];
 
       function initMap() {
         var austin = {lat: 30.286, lng: -97.731};
@@ -137,22 +143,6 @@ $(document).ready(function(){
         }, callback);
       }
 
-      function callback(results, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-          for (var i = 0; i < results.length; i++){
-            createMarker(results[i]);
-            // console.log(results[i]);
-            if(i<10){
-            $("#searchButtons").append("<button id="+results[i].id+">"+results[i].name+"</button>");
-          }
-            // $("#search-results").append("<div class=results>"+results[i].name+": Rated: "+results[i].rating+"</div>");
-
-            // $("#search-results").append("<div>"+results[i.name+"</div>"]);
-
-          }
-        }
-      }
-
       function createMarker(place) {
         var placeLoc = place.geometry.location;
         var marker = new google.maps.Marker({
@@ -168,6 +158,56 @@ $(document).ready(function(){
 
 
 initMap();
+
+
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++){
+            createMarker(results[i]);
+            // console.log(results[i]);
+            if(i<10){
+            $("#searchButtons").append("<button id="+results[i].id+" class='searchBtn'>"+results[i].name+"</button>");
+            locationId.push(results[i].id);
+            locationName.push(results[i].name);
+            locationRating.push(results[i].rating);
+            locationVicinity.push(results[i].vicinity);
+            // console.log(locationName);
+          }}}}
+
+// results[i].name
+
+
+
+$(document).on("click", ".searchBtn", function(){
+    console.log("working");
+    var id = $(this).attr("id");
+    var arrayNum = locationId.indexOf(id);
+    $("#mLocName").text(locationName[arrayNum]);
+    $("#mLocRating").text(locationRating[arrayNum]);
+    $("#mLocVicinity").text(locationVicinity[arrayNum]);
+
+    database.ref("/locations").on("value", function(snapshot){
+      if(snapshot.child(id).exists()){
+        console.log("coolio");
+      }else{
+        console.log("nope");
+        console.log(id);
+        database.ref("/locations").update({
+          //ignore syntax error on line below. working as intended
+          [id]:{
+            liked:0,
+            disliked:0
+          }
+        });
+
+      }
+
+      $("#ourRate").html('<button id="mLike">LIKE <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button><p id="mLikes"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> </p><button id="mDislike">DISLIKE <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> </button><p id="mDislikes"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></p>');
+    });
+    modal.style.display = "block";
+    });
+
+
 
 
 
@@ -197,43 +237,36 @@ initMap();
 
 
 //generates divs to hold information regarding best search results
+// Get the modal
+var modal = document.getElementById('myModal');
 
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
 
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
 
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+};
 
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+};
 
-
-
-//------------------------------------------------------------------------------
-
-
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
 
 
 // SCRIPT FOR WEBSITE CSS ANIMATION --------------------------------------------
 // Document Ready
 $(document).ready(function() {
-
-
-    // // BEER AND BEANS FUNCTION - Fill'er up
-    // $ ("#fill-me-up").click(function(){
-    //     // Poor Drink Function
-    //     $('.pour').delay(2000).animate({
-    //         height: '360px'
-    //         }, 1500).delay(1600).slideUp(500);
-    //     // Beans Animation
-    //     $('.beans').fadeIn(4000);
-
-    //     // Liquid Fills Up
-    //     $('#liquid').delay(3400).animate({
-    //         height: '225px'
-    //         }, 2500);
-
-    //     // Beer foam rises
-    //     $('.beer-foam').delay(3400).animate({
-    //         bottom: '250px'
-    //         }, 2500);
-    // });
-
 
     // on click funtion for navigation bar to appear on click
     $('#nav-icon3').click(function(){
@@ -246,16 +279,23 @@ $(document).ready(function() {
         $("#search-connect-btn").fadeIn(2500);
     });
 
-    $("#like").click(function () {
+    $(document).on("click", "#like", function () {
       $("#likes").show(200);
     });
 
-    $("#dislike").click(function () {
+    $(document).on("click", "#dislike", function () {
       $("#dislikes").show(200);
     });
 
 
+//modal "like" click functionality
+    $(document).on("click", "#mLike", function () {
+      $("#mLikes").show(200);
+    });
 
+    $(document).on("click", "#mDislike", function () {
+      $("#mDislikes").show(200);
+    });
 
     // overlay navigation menu
     $("#hamburger-nav").click(function() {
