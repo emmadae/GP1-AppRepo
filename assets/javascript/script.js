@@ -33,7 +33,7 @@
 
     $(window).load(function() {
       $("#content-index").show();
-      $("#search-connect-btn").fadeIn(2500);
+      $("#search-connect-btn").fadeIn(2000);
     });
 
     $("#like").click(function () {
