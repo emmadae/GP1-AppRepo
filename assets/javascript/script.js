@@ -148,7 +148,7 @@ $(document).on("click", "#dislike",function(){
 var search;
 var zipcode;
 var mAway = 1609;
-var destiantionSelect = 'bar';
+var destinationSelect = 'bar';
 var drawDistance = 14;
 //updates map using Users Search Parameters
 $(document).ready(function(){
@@ -214,7 +214,8 @@ $(document).ready(function(){
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
           location: austin,
-          radius: mAway,
+          rankBy: google.maps.places.RankBy.DISTANCE,
+          // radius: mAway,
           type: [destinationSelect]
         }, callback);
       }
@@ -250,18 +251,6 @@ initMap();
             locationVicinity.push(results[i].vicinity);
             // console.log(locationName);
           }}}}
-
-
-          // searchBox.addListener('places_changed', function() {
-          //
-          //
-          //    // var mapLoad = document.getElementById('map');
-          //     displayMap();
-          //
-          //    var places = searchBox.getPlaces();
-          //
-          //    console.log(places);
-          // });
 
 
 $(document).on("click", ".searchBtn", function(){
