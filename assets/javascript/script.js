@@ -241,7 +241,7 @@ initMap();
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           for (var i = 0; i < results.length; i++){
             createMarker(results[i]);
-            // console.log(results[i]);
+            console.log(results[i]);
             if(i<10){
             $("#searchButtons").append("<button id="+results[i].id+" class='searchBtn'>"+results[i].name+"</button>");
             locationId.push(results[i].id);
