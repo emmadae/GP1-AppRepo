@@ -1358,7 +1358,7 @@ Beer Bubbles Animation
 /* MEDIA QUIERIES PHONES */
 /* for mobile devices only */
 /* insert this exact line (   (min-height: 680px),   ) inbetween media and only */
-@media (min-height: 680px), only screen and (min-width: 320px) and (max-width: 780px)
+@media only screen and (min-width: 320px) and (max-width: 780px)
   and (orientation: portrait){
 
     /* Body Background Styling */
