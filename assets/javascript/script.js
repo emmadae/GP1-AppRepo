@@ -75,7 +75,7 @@ $(document).on("click", "#dislike",function(){
 var search;
 var zipcode;
 var mAway = 1609;
-var destiantionSelect = 'cafe';
+var destiantionSelect = 'bar';
 var drawDistance = 14;
 //updates map using Users Search Parameters
 $(document).ready(function(){
@@ -139,10 +139,10 @@ $(document).ready(function(){
         service.nearbySearch({
           location: austin,
           radius: mAway,
-          type: [destiantionSelect]
+          type: [destinationSelect]
         }, callback);
       }
-
+// [destiantionSelect]
       function createMarker(place) {
         var placeLoc = place.geometry.location;
         var marker = new google.maps.Marker({
@@ -164,7 +164,7 @@ initMap();
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           for (var i = 0; i < results.length; i++){
             createMarker(results[i]);
-            // console.log(results[i]);
+            console.log(results[i]);
             if(i<10){
             $("#searchButtons").append("<button id="+results[i].id+" class='searchBtn'>"+results[i].name+"</button>");
             locationId.push(results[i].id);
@@ -174,8 +174,17 @@ initMap();
             // console.log(locationName);
           }}}}
 
-// results[i].name
 
+          // searchBox.addListener('places_changed', function() {
+          //
+          //
+          //    // var mapLoad = document.getElementById('map');
+          //     displayMap();
+          //
+          //    var places = searchBox.getPlaces();
+          //
+          //    console.log(places);
+          // });
 
 
 $(document).on("click", ".searchBtn", function(){
