@@ -317,7 +317,7 @@ $(document).ready(function() {
       $("#dislikes").show(200);
     });
 
-
+});
 //modal "like" click functionality
     $(document).on("click", "#mLike", function () {
       $("#mLikes").show(200);
@@ -334,12 +334,14 @@ $(document).ready(function() {
           database.ref().update({[thePath]:likes});
         });
 
-      database.ref("liked").once("value",function(snapshot){
-        $("#likes").text("Likes: "+ (parseInt(snapshot.val())+1));
+      database.ref("locations/"+id+"/liked").once("value",function(snapshot){
+        $("#mlikes").text("Likes: "+ (parseInt(snapshot.val())+1));
       });
     });
-    });
 
+
+
+//modal functionality for dislikes
     $(document).on("click", "#mDislike", function () {
       $("#mDislikes").show(200);
       var bad= firebase.database().ref("locations/"+id);
@@ -352,25 +354,9 @@ $(document).ready(function() {
         });
     });
 
-    $(document).on("click", "#mLikes", function(){
-
-
-
-
-
-    $(document).on("click", "#dislike",function(){
-      var bad= firebase.database().ref("disliked");
-      var dislikes;
-        bad.once("value", function(snapshot){
-          dislikes = snapshot.val();
-          dislikes++;
-          database.ref().update({disliked:dislikes});
-        });
-
-      database.ref("disliked").on("value",function(snapshot){
-        $("#dislikes").text("Dislikes: "+ (parseInt(snapshot.val())+1));
+      database.ref("locations/"+id+"/disliked").once("value",function(snapshot){
+        $("#mdislikes").text("Dislikes: "+ (parseInt(snapshot.val())+1));
       });
-    });
 
 
     // overlay navigation menu
@@ -381,9 +367,3 @@ $(document).ready(function() {
     $("#exit-btn").click(function() {
       $(".overlay-content").style.width = "0%";
     });
-
-
-
-
-
-});
