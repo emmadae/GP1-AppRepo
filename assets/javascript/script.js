@@ -219,6 +219,7 @@ $(document).on("click", ".searchBtn", function(){
     var arrayNum = locationId.indexOf(id);
     $("#mLocName").text(locationName[arrayNum]);
     $("#mLocRating").text("Rating: " + locationRating[arrayNum]);
+
     $("#mLocVicinity").text(locationVicinity[arrayNum]);
 
     database.ref("/locations").on("value", function(snapshot){
@@ -236,7 +237,10 @@ $(document).on("click", ".searchBtn", function(){
         });
 
       }
-
+      console.log(snapshot.child(id).child("liked").val());
+      var popular = snapshot.child(id).child("liked").val();
+      var unpopular = snapshot.child(id).child("disliked").val();
+      $("#userRates").text("Likes: "+popular+" | Dislikes: "+ unpopular);
       $("#ourRate").html('<button id="mLike">LIKE <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button><p id="mLikes"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> </p><button id="mDislike">DISLIKE <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> </button><p id="mDislikes"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></p>');
     });
     modal.style.display = "block";
