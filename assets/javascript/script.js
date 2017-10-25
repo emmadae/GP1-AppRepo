@@ -103,47 +103,6 @@
   // var baseURLGM = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" +
   //   keyGM + "&q=";
 
-
-
-$(document).on("click", "#reset",function(){
-  database.ref().set({
-      liked:0,
-      disliked:0
-  });
-});
-
-
-$(document).on("click", "#like", function(){
-  var good= firebase.database().ref("liked");
-  var likes;
-    good.once("value", function(snapshot){
-      likes = snapshot.val();
-      likes++;
-      database.ref().update({liked:likes});
-    });
-
-  database.ref("liked").once("value",function(snapshot){
-    $("#likes").text("Likes: "+ (parseInt(snapshot.val())+1));
-  });
-});
-
-
-
-$(document).on("click", "#dislike",function(){
-  var bad= firebase.database().ref("disliked");
-  var dislikes;
-    bad.once("value", function(snapshot){
-      dislikes = snapshot.val();
-      dislikes++;
-      database.ref().update({disliked:dislikes});
-    });
-
-  database.ref("disliked").on("value",function(snapshot){
-    $("#dislikes").text("Dislikes: "+ (parseInt(snapshot.val())+1));
-  });
-});
-
-
 //Users Search Parameters
 var search;
 var zipcode;
@@ -252,10 +211,11 @@ initMap();
             // console.log(locationName);
           }}}}
 
+var id;
 
 $(document).on("click", ".searchBtn", function(){
     console.log("working");
-    var id = $(this).attr("id");
+    id = $(this).attr("id");
     var arrayNum = locationId.indexOf(id);
     $("#mLocName").text(locationName[arrayNum]);
     $("#mLocRating").text(locationRating[arrayNum]);
@@ -361,11 +321,57 @@ $(document).ready(function() {
 //modal "like" click functionality
     $(document).on("click", "#mLike", function () {
       $("#mLikes").show(200);
+      console.log(id);
+      var good= firebase.database().ref("locations/"+id);
+      console.log(good);
+      var likes;
+        good.once("value", function(snapshot){
+          console.log("snapshot: "+JSON.stringify(snapshot.val()));
+           likes = snapshot.val().liked;
+           console.log(snapshot.val().liked);
+          likes++;
+          var thePath = "locations/"+id+"/liked";
+          database.ref().update({[thePath]:likes});
+        });
+
+      database.ref("liked").once("value",function(snapshot){
+        $("#likes").text("Likes: "+ (parseInt(snapshot.val())+1));
+      });
+    });
     });
 
     $(document).on("click", "#mDislike", function () {
       $("#mDislikes").show(200);
+      var bad= firebase.database().ref("locations/"+id);
+      var dislikes;
+        bad.once("value", function(snapshot){
+          dislikes = snapshot.val().disliked;
+          dislikes++;
+          var thePath = "locations/"+id+"/disliked";
+          database.ref().update({[thePath]:dislikes});
+        });
     });
+
+    $(document).on("click", "#mLikes", function(){
+
+
+
+
+
+    $(document).on("click", "#dislike",function(){
+      var bad= firebase.database().ref("disliked");
+      var dislikes;
+        bad.once("value", function(snapshot){
+          dislikes = snapshot.val();
+          dislikes++;
+          database.ref().update({disliked:dislikes});
+        });
+
+      database.ref("disliked").on("value",function(snapshot){
+        $("#dislikes").text("Dislikes: "+ (parseInt(snapshot.val())+1));
+      });
+    });
+
 
     // overlay navigation menu
     $("#hamburger-nav").click(function() {
