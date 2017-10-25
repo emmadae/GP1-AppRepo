@@ -258,7 +258,7 @@ $(document).on("click", ".searchBtn", function(){
     var id = $(this).attr("id");
     var arrayNum = locationId.indexOf(id);
     $("#mLocName").text(locationName[arrayNum]);
-    $("#mLocRating").text(locationRating[arrayNum]);
+    $("#mLocRating").text("Rating: " + locationRating[arrayNum]);
     $("#mLocVicinity").text(locationVicinity[arrayNum]);
 
     database.ref("/locations").on("value", function(snapshot){
