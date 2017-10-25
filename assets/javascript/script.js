@@ -320,22 +320,21 @@ $(document).ready(function() {
 });
 //modal "like" click functionality
     $(document).on("click", "#mLike", function () {
-      $("#mLikes").show(200);
-      console.log(id);
+
       var good= firebase.database().ref("locations/"+id);
-      console.log(good);
       var likes;
         good.once("value", function(snapshot){
-          console.log("snapshot: "+JSON.stringify(snapshot.val()));
            likes = snapshot.val().liked;
-           console.log(snapshot.val().liked);
           likes++;
           var thePath = "locations/"+id+"/liked";
           database.ref().update({[thePath]:likes});
         });
 
       database.ref("locations/"+id+"/liked").once("value",function(snapshot){
-        $("#mlikes").text("Likes: "+ (parseInt(snapshot.val())+1));
+        $("#mLikes").show(200);
+        console.log("you liked");
+        console.log(snapshot.val());
+        $("#mLikes").text("Likes: "+ (parseInt(snapshot.val())+1));
       });
     });
 
@@ -351,12 +350,18 @@ $(document).ready(function() {
           dislikes++;
           var thePath = "locations/"+id+"/disliked";
           database.ref().update({[thePath]:dislikes});
+          console.log(snapshot.val());
+        });
+        database.ref("locations/"+id+"/disliked").once("value",function(snapshot){
+            $("#mDislikes").show(200);
+          console.log("you disliked");
+          console.log(snapshot.val());
+          $("#mDislikes").text("Dislikes: "+ (parseInt(snapshot.val())+1));
         });
     });
 
-      database.ref("locations/"+id+"/disliked").once("value",function(snapshot){
-        $("#mdislikes").text("Dislikes: "+ (parseInt(snapshot.val())+1));
-      });
+//this is currently not triggering properly
+
 
 
     // overlay navigation menu
