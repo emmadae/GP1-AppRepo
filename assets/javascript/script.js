@@ -188,7 +188,7 @@ $(document).ready(function(){
         });
 
         google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.name + "<br>" + "Rating: " + place.rating + "/5" + "<br>" + place.radius + " miles away");
+          infowindow.setContent(place.name + "<br>" + "Rating: " + place.rating + "/5" + "<br>" + "Open now: " + place.opening_hours.open_now);
           infowindow.open(map, this);
         });
       }
