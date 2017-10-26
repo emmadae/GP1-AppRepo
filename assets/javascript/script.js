@@ -241,7 +241,7 @@ $(document).on("click", ".searchBtn", function(){
       var popular = snapshot.child(id).child("liked").val();
       var unpopular = snapshot.child(id).child("disliked").val();
       $("#userRates").text("Likes: "+popular+" | Dislikes: "+ unpopular);
-      $("#ourRate").html('<button id="mLike">LIKE <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button><p id="mLikes"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> </p><button id="mDislike">DISLIKE <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> </button><p id="mDislikes"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></p>');
+      $("#ourRate").html('<button id="mLike">LIKE <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button><button id="mDislike">DISLIKE <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> </button>');
     });
     modal.style.display = "block";
     });
@@ -313,29 +313,24 @@ $(document).ready(function() {
         $("#search-connect-btn").fadeIn(2500);
     });
 
-    $(document).on("click", "#like", function () {
-      $("#likes").show(200);
-    });
-
-    $(document).on("click", "#dislike", function () {
-      $("#dislikes").show(200);
-    });
 
 });
 //modal "like" click functionality
-    $(document).on("click", "#mLike", function () {
-
+    $(document).on("click", "#mLike", function() {
+      console.log("clicked");
       var good= firebase.database().ref("locations/"+id);
       var likes;
         good.once("value", function(snapshot){
-           likes = snapshot.val().liked;
+          likes = snapshot.val().liked;
           likes++;
           var thePath = "locations/"+id+"/liked";
           database.ref().update({[thePath]:likes});
+          $("#mLike").fadeOut();
+          $("#mDislike").fadeOut();
         });
 
       database.ref("locations/"+id+"/liked").once("value",function(snapshot){
-        $("#mLikes").show(200);
+
         console.log("you liked");
         console.log(snapshot.val());
         $("#mLikes").text("Likes: "+ (parseInt(snapshot.val())+1));
@@ -346,7 +341,8 @@ $(document).ready(function() {
 
 //modal functionality for dislikes
     $(document).on("click", "#mDislike", function () {
-      $("#mDislikes").show(200);
+
+      console.log($(this));
       var bad= firebase.database().ref("locations/"+id);
       var dislikes;
         bad.once("value", function(snapshot){
@@ -354,10 +350,10 @@ $(document).ready(function() {
           dislikes++;
           var thePath = "locations/"+id+"/disliked";
           database.ref().update({[thePath]:dislikes});
-          console.log(snapshot.val());
+          $("#mDislike").fadeOut();
+          $("#mLike").fadeOut();
         });
         database.ref("locations/"+id+"/disliked").once("value",function(snapshot){
-            $("#mDislikes").show(200);
           console.log("you disliked");
           console.log(snapshot.val());
           $("#mDislikes").text("Dislikes: "+ (parseInt(snapshot.val())+1));
@@ -365,7 +361,7 @@ $(document).ready(function() {
     });
 
 //this is currently not triggering properly
-
+DirectionsService.route();
 
 
     // overlay navigation menu
@@ -376,3 +372,46 @@ $(document).ready(function() {
     $("#exit-btn").click(function() {
       $(".overlay-content").style.width = "0%";
     });
+
+
+/*google maps directions-------------------------------------------------------*/
+DirectionsRequest = {
+  origin: "Austin, TX",
+  destination: "Chicago, IL",
+  travelMode: "DRIVING",
+};
+
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
+var map;
+var haight = new google.maps.LatLng(37.7699298, -122.4469157);
+var oceanBeach = new google.maps.LatLng(37.7683909618184, -122.51089453697205);
+$("#test").click(DirectionsService.route(DirectionsRequest));
+function initialize() {
+  directionsDisplay = new google.maps.DirectionsRenderer();
+  var mapOptions = {
+    zoom: 14,
+    center: haight
+  };
+  map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  directionsDisplay.setMap(map);
+}
+
+function calcRoute() {
+  var selectedMode = "DRIVING";
+  var request = {
+      origin: haight,
+      destination: oceanBeach,
+      // Note that Javascript allows us to access the constant
+      // using square brackets and a string value as its
+      // "property."
+      travelMode: google.maps.TravelMode[selectedMode]
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == 'OK') {
+      directionsDisplay.setDirections(response);
+    }
+  });
+}
+DirectionsService.route(DirectionsRequest);
+// calcRoute();
