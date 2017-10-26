@@ -30,7 +30,7 @@
 			<i id="hamburger-nav" class="fa fa-bars mobile-only ham-nav-search" aria-hidden="true"></i>
 
 			<div id="overlay">
-				<div id="show-please">
+				<div>
 
 				<i id="exit-btn" class="fa fa-times" aria-hidden="true"></i>
 
@@ -41,8 +41,6 @@
 							<li><a href="search.html" class="active"> SEARCH </a></li>
 							<li class="line-brake-nav"> | </li>
 							<li><a href="about.html"> BEANS &amp; BREWS </a></li>
-							<li class="line-brake-nav"> | </li>
-							<li class="mobile-only"><a href="instructions.html"> HOW IT WORKS </a></li>
 				        </ul>
 					</nav>
 				</div>
@@ -52,6 +50,7 @@
 
 	<!-- Iniput Form For Search Results -->
 		<div id="body-background">
+			<h1 id="searchTitle"> Search: </h1>
 			<form id="search-form">
 			<!--  Selection For Beverage Choice -->
 			  	<div class="form-group">
@@ -108,6 +107,7 @@
 	<!-- Empty Div For Google Maps -->
 		<section id="search-results">
 
+			<div id="searchButtons"><h1 id="searchResultsTitle"> Search Results: </h1></div>
 			<div id="name"></div>
 			<div id="rating"></div>
 			<div id="price-level"></div>
@@ -118,6 +118,23 @@
 			<p id="dislikes"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></p>
 		</section>
 
+
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+
+		  <!-- Modal content -->
+		  <div class="modal-content">
+		    <span class="close">&times;</span>
+		    <p id="mLocName">Here's some info</p>
+				<p id="mLocRating">Here's some more info</p>
+				<p id="userRates">Yo dawg what up?</p>
+				<p id="mLocVicinity">Here's some more info</p>
+				<div id="ourRate">
+						<!--build like buttons here-->
+				</div>
+		  </div>
+
+		</div>
 
 
 
