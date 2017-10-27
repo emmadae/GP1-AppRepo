@@ -113,7 +113,7 @@ var drawDistance = 14;
 $(document).ready(function(){
   $("#search-btn").on("click", function(event){
     event.preventDefault();
-    $("#searchButtons").html("");
+    $("#searchButtons").html('<h1 id="searchResultsTitle"> Search Results: </h1>');
     //sets distance converting miles to meters
     miAway = parseInt($("#miles-away>option:selected").text());
     mAway = miAway*1609;
@@ -179,14 +179,28 @@ $(document).ready(function(){
         }, callback);
       }
 // [destiantionSelect]
+
+
+var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+
+var basicIcon = 'https://chart.googleapis.com/chart?chst=d_simple_text_icon_below&chld=rating|100|32302e|beer|24|FFCC33|32302e';
+
       function createMarker(place) {
         var placeLoc = place.geometry.location;
+        if(place.rating == "undefined"){
+
+        }
+
+        var basicIconc = 'https://chart.googleapis.com/chart?chst=d_simple_text_icon_below&chld='+place.rating+'|14|32302e|cafe|24|ebe4c2|32302e';
         var marker = new google.maps.Marker({
           map: map,
           placeId: place.place_id,
           position: place.geometry.location,
           animation: google.maps.Animation.DROP,
-          label: String(place.rating)
+          // label: String(place.rating),
+          // icon:iconBase+'coffee_maps.png'
+          icon:basicIconc
+
         });
 
         google.maps.event.addListener(marker, 'click', function() {
@@ -209,25 +223,27 @@ $(document).ready(function(){
 
 initMap();
 var result;
-function btnGen(){
+function btnGen(result){
   $("#searchButtons").append("<button id="+result.id+" class='searchBtn'>"+result.name+"</button>");
+  $("#"+result.id).hide().fadeIn(300);
 }
 
       function callback(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
-          for (var i = 0; i < results.length; i++){
+          for (let i = 0; i < results.length; i++){
             result = results[i];
-            createMarker(results[i]);
-
-            if(i<10){
-              setTimeout(btnGen(results[i]), i*10000);
+            setTimeout(()=>{createMarker(results[i])},i*100);
+            // createMarker(results[i]);
+              setTimeout(()=>{btnGen(results[i])}, i*250);
             // $("#searchButtons").append("<button id="+results[i].id+" class='searchBtn'>"+results[i].name+"</button>");
             locationId.push(results[i].id);
             locationName.push(results[i].name);
             locationRating.push(results[i].rating);
             locationVicinity.push(results[i].vicinity);
             // console.log(locationName);
-          }}}}
+          }}}
+
+          // arr[10]
 
 var id;
 
