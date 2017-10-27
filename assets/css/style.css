@@ -1,3 +1,7 @@
+#pic{
+  height:500px;
+  width:500px;
+}
 /* Body Background Styling */
 body{
   background-image: url("../images/background.jpg");
