@@ -153,7 +153,7 @@ $(document).ready(function(){
 
 
 
-
+//variables print information in the modal
       var map;
       var infowindow;
       var locationId= [];
@@ -184,26 +184,44 @@ $(document).ready(function(){
         var marker = new google.maps.Marker({
           map: map,
           placeId: place.place_id,
-          position: place.geometry.location
+          position: place.geometry.location,
+          animation: google.maps.Animation.DROP,
+          label: String(place.rating)
         });
 
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.setContent(place.name + "<br>" + "Rating: " + place.rating + "/5" + "<br>" + "Open now: " + place.opening_hours.open_now);
           infowindow.open(map, this);
+          var austin = {lat: 30.286, lng: -97.731};
+          var panorama = new google.maps.StreetViewPanorama(
+
+            document.getElementById('pic'), {
+              position: austin,
+              pov: {
+                heading: 34,
+                pitch: 10
+              }
+            });
+        map.setStreetView(panorama);
         });
       }
 
 
 initMap();
-
+var result;
+function btnGen(){
+  $("#searchButtons").append("<button id="+result.id+" class='searchBtn'>"+result.name+"</button>");
+}
 
       function callback(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           for (var i = 0; i < results.length; i++){
+            result = results[i];
             createMarker(results[i]);
-            console.log(results[i]);
+
             if(i<10){
-            $("#searchButtons").append("<button id="+results[i].id+" class='searchBtn'>"+results[i].name+"</button>");
+              setTimeout(btnGen(results[i]), i*10000);
+            // $("#searchButtons").append("<button id="+results[i].id+" class='searchBtn'>"+results[i].name+"</button>");
             locationId.push(results[i].id);
             locationName.push(results[i].name);
             locationRating.push(results[i].rating);
