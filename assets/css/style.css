@@ -733,7 +733,7 @@ header{
 }
 
 /* search input button */
-#search-btn{
+#search-btn, #zRec{
   list-style-type: none;
   text-decoration: none;
   background: none;
@@ -744,6 +744,15 @@ header{
   text-align: center;
   padding: 10px 15px;
   margin-top:2%;
+}
+
+#search-btn:hover, #zRec:hover {
+  background: white;
+  color:#282828;
+}
+
+#zRec{
+  margin-left:2%;
 }
 
 #search-form input, #search-form select{
@@ -1107,10 +1116,14 @@ hr{
   }
 
   /* search input button */
-  #search-btn{
+  #search-btn, #zRec{
     font-size: 28px;
     border:2px solid white;
     padding:10px 20px;
+  }
+
+  #zRec{
+    margin-left:2%;
   }
 
   #search-form input, #search-form select{
@@ -1452,10 +1465,14 @@ hr{
   }
 
   /* search input button */
-  #search-btn{
+  #search-btn, #zRec{
     font-size: 35px;
     border:2px solid white;
     padding:10px 20px;
+  }
+
+  #zRec{
+    margin-left:2%;
   }
 
   #search-form input, #search-form select{
