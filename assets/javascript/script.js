@@ -1,30 +1,3 @@
-
-// SCRIPT FOR WEBSITE CSS ANIMATION --------------------------------------------
-// Document Ready
-
-
-
-    // // BEER AND BEANS FUNCTION - Fill'er up
-    // $ ("#fill-me-up").click(function(){
-    //     // Poor Drink Function
-    //     $('.pour').delay(2000).animate({
-    //         height: '360px'
-    //         }, 1500).delay(1600).slideUp(500);
-    //     // Beans Animation
-    //     $('.beans').fadeIn(4000);
-
-    //     // Liquid Fills Up
-    //     $('#liquid').delay(3400).animate({
-    //         height: '225px'
-    //         }, 2500);
-
-    //     // Beer foam rises
-    //     $('.beer-foam').delay(3400).animate({
-    //         bottom: '250px'
-    //         }, 2500);
-    // });
-
-
     // on click funtion for navigation bar to appear on click
     $('#nav-icon3').click(function(){
         $(".list-items").slideToggle(800);
@@ -55,26 +28,10 @@
     $("#exit-btn").click(function() {
       $("#overlay").hide();
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //-----------------------------------------------------------------------------
 // WORKING SCRIPT--------------------------------------------------------------
 
-// Initialize Firebase
+/*Initialize Firebase----------------------------------------------------------*/
   var config = {
     apiKey: "AIzaSyDRQXaMgkueFCWKSOynK2w_2e81_J7xUUM",
     authDomain: "gp1-app.firebaseapp.com",
@@ -87,29 +44,15 @@
 	//variables
 	var database = firebase.database();
 
-/*google places----------------------------------------------------------------*/
-  //current location austin Tx
-  var locationGP = "location=30.286,-97.731";
-  //search radius
-  var radiusGP = "radius=1000";
-  //specify search results
-  var typeGP = "type=bar";
-  //google places key
-  var keyGP = "key=AIzaSyA8_XF-LUfDpeY-Lt1RapGFKkgKGvYCbmI";
-  //http+search parameters
-  var httpGP = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"+locationGP+"&"+radiusGP+"&"+typeGP+"&"+keyGP;
-// var likes =0;
-  //   var keyGM = "key=AIzaSyAdGVuh0tV7TL63m1dBWw0krADF2MPj0FA";
-  // var baseURLGM = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" +
-  //   keyGM + "&q=";
 
-//Users Search Parameters
+/*Users Search Parameters------------------------------------------------------*/
 var search;
 var zipcode;
 var mAway = 1609;
 var destinationSelect = 'bar';
 var drawDistance = 14;
-//updates map using Users Search Parameters
+
+/*function triggers when search button is pressed------------------------------*/
 $(document).ready(function(){
   $("#search-btn").on("click", function(event){
     event.preventDefault();
@@ -117,6 +60,7 @@ $(document).ready(function(){
     //sets distance converting miles to meters
     miAway = parseInt($("#miles-away>option:selected").text());
     mAway = miAway*1609;
+    //sets zome distance based on miles choice
     if(miAway === 1){
       drawDistance = 14;
     }else if(miAway === 5){
@@ -132,27 +76,28 @@ $(document).ready(function(){
     }else if(miAway === 30){
       drawDistance = 10;
     }
-    //sets categories based on user specificity
+    //sets categories to coffee shops
     if($("#destination-select>option:selected").text()==="Coffee"){
         destinationSelect = "cafe";
+    //sets categories to bars
     }else if($("#destination-select>option:selected").text()==="Brews"){
       destinationSelect = "bar";
-    //looking for both not functioning properly
+    //NYI looks for both at the same time
     }else{
       destinationSelect = "'cafe', 'bar'";
     }
 
-    //not implemented
+    //NYI takes in user search parameters for zipcode or specific location name
     search = $("#search").val();
     zipcode = $("#zipcode").val();
 
-    //loads map with new user specs
+    //runs initMap() function with new user specficiations
     initMap();
   });
 });
 
 
-
+/*search Results information Storage-------------------------------------------*/
 //variables print information in the modal
       var map;
       var infowindow;
@@ -245,11 +190,17 @@ function btnGen(result){
 
           // arr[10]
 
+
+
+/*Modal Generation-------------------------------------------------------------*/
+//gets set to id from locationId[]
 var id;
 
+//function triggers on any search result button press
 $(document).on("click", ".searchBtn", function(){
     console.log("working");
     id = $(this).attr("id");
+    //sets variable = respective locationId array #
     var arrayNum = locationId.indexOf(id);
     $("#mLocName").text(locationName[arrayNum]);
     $("#mLocRating").text("Rating: " + locationRating[arrayNum]);
@@ -394,8 +345,7 @@ $(document).ready(function() {
         });
     });
 
-//this is currently not triggering properly
-DirectionsService.route();
+
 
 
     // overlay navigation menu
@@ -409,43 +359,112 @@ DirectionsService.route();
 
 
 /*google maps directions-------------------------------------------------------*/
-DirectionsRequest = {
-  origin: "Austin, TX",
-  destination: "Chicago, IL",
-  travelMode: "DRIVING",
-};
+//this is currently not triggering properly
+// DirectionsService.route();
+// DirectionsRequest = {
+//   origin: "Austin, TX",
+//   destination: "Chicago, IL",
+//   travelMode: "DRIVING",
+// };
+//
+// var directionsDisplay;
+// var directionsService = new google.maps.DirectionsService();
+// var map;
+// var haight = new google.maps.LatLng(37.7699298, -122.4469157);
+// var oceanBeach = new google.maps.LatLng(37.7683909618184, -122.51089453697205);
+// $("#test").click(DirectionsService.route(DirectionsRequest));
+// function initialize() {
+//   directionsDisplay = new google.maps.DirectionsRenderer();
+//   var mapOptions = {
+//     zoom: 14,
+//     center: haight
+//   };
+//   map = new google.maps.Map(document.getElementById('map'), mapOptions);
+//   directionsDisplay.setMap(map);
+// }
+//
+// function calcRoute() {
+//   var selectedMode = "DRIVING";
+//   var request = {
+//       origin: haight,
+//       destination: oceanBeach,
+//       // Note that Javascript allows us to access the constant
+//       // using square brackets and a string value as its
+//       // "property."
+//       travelMode: google.maps.TravelMode[selectedMode]
+//   };
+//   directionsService.route(request, function(response, status) {
+//     if (status == 'OK') {
+//       directionsDisplay.setDirections(response);
+//     }
+//   });
+// }
+// DirectionsService.route(DirectionsRequest);
+// // calcRoute();
+//
 
-var directionsDisplay;
-var directionsService = new google.maps.DirectionsService();
-var map;
-var haight = new google.maps.LatLng(37.7699298, -122.4469157);
-var oceanBeach = new google.maps.LatLng(37.7683909618184, -122.51089453697205);
-$("#test").click(DirectionsService.route(DirectionsRequest));
-function initialize() {
-  directionsDisplay = new google.maps.DirectionsRenderer();
-  var mapOptions = {
-    zoom: 14,
-    center: haight
-  };
-  map = new google.maps.Map(document.getElementById('map'), mapOptions);
-  directionsDisplay.setMap(map);
+/*pulls up zomato reccomendations----------------------------------------------*/
+$("#zRec").on("click",function(event){
+  event.preventDefault();
+  runQuery();
+});
+
+/////---------- BEST COFFEE in Austin
+function runQuery() {
+
+ var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=278&entity_type=city&collection_id=22&sort=cost&order=asc&apikey=0818fb9729c7dcbc78591a61346d060d";
+ console.log(queryURL);
+ $.ajax({
+   url: queryURL,
+   method: "GET"
+ }).done(function(response) {
+
+   // console.log(response);
+   // console.log(response.restaurants);
+
+   var bestCoffee = response.data;
+
+   for (var i = 0; i < response.restaurants.length; i++) {
+     console.log( response.restaurants[i].restaurant.name);
+     console.log( response.restaurants[i].restaurant.location.address);
+     var bestCoffeeaddress = response.restaurants[i].restaurant.location.address;
+     var bestCoffeename = response.restaurants[i].restaurant.name;
+
+     $("#search-results").append("<button>"+bestCoffeename+"</button>");
+    //  $("#locationBestcoffee").append(bestCoffeeaddress);
+   }
+
+ });
+
 }
 
-function calcRoute() {
-  var selectedMode = "DRIVING";
-  var request = {
-      origin: haight,
-      destination: oceanBeach,
-      // Note that Javascript allows us to access the constant
-      // using square brackets and a string value as its
-      // "property."
-      travelMode: google.maps.TravelMode[selectedMode]
-  };
-  directionsService.route(request, function(response, status) {
-    if (status == 'OK') {
-      directionsDisplay.setDirections(response);
+////--------- BEST BEER in Austin
+
+function runbestbeerQuery() {
+
+  var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=278&entity_type=city&collection_id=41&sort=cost&order=asc&apikey=0818fb9729c7dcbc78591a61346d060d";
+  console.log(queryURL);
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).done(function(response) {
+
+    // console.log(response);
+    // console.log(response.restaurants);
+
+    var bestBeer = response.data;
+
+    for (var i = 0; i < response.restaurants.length; i++) {
+      console.log(response.restaurants[i].restaurant.name);
+      console.log(response.restaurants[i].restaurant.location.address);
+      ////////////////////////
+      var bestBeeradddress = response.restaurants[i].restaurant.location.address;
+      var bestBeername = response.restaurants[i].restaurant.name;
+      $("#bestbeerResult").append(bestBeername);
+      $("#locationBestbeer").append(bestBeeradddress);
+
     }
+
   });
+
 }
-DirectionsService.route(DirectionsRequest);
-// calcRoute();
