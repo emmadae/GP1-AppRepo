@@ -1,7 +1,3 @@
-#pic{
-  height:500px;
-  width:500px;
-}
 /* Body Background Styling */
 body{
   background-image: url("../images/background.jpg");
@@ -9,7 +5,6 @@ body{
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size:cover;
-
 }
 
 header{
@@ -21,10 +16,7 @@ header{
   overflow: hidden;
 }
 
-
 /* NAV BAR MENU STYLING  --------------------------------------------------- */
-
-
 #overlay div .nav ul{
   float: left;
   width:100%;
@@ -34,7 +26,6 @@ header{
 #overlay div .nav li{
   display: inline-block;
   float:left;
-
 }
 
 #overlay div .line-brake-nav{
@@ -66,9 +57,7 @@ header{
   text-shadow: 0 0 20px white;
 }
 
-
 /* Main Beans & Brews Logo & Search Button Link On Index.html ------------------ */
-
 .mobile-logo{
   display: none;
 }
@@ -79,7 +68,6 @@ header{
   margin-left:1%;
   margin-top:5.5%;
 }
-
 
 /* Button that connects the the Search.html page */
 #search-connect-btn {
@@ -101,7 +89,7 @@ header{
 }
 
 #search-connect-btn a:hover {
-    list-style-type: none;
+  list-style-type: none;
   text-decoration: none;
   color:#282828;
   background-color:white;
@@ -112,7 +100,6 @@ header{
   top:-585px;
   height: 650px;
   margin: 0 auto;
-  margin-left;
   position: relative;
   width: 5%;
   margin-left:66.9%;
@@ -708,17 +695,12 @@ header{
     to {right: 0;}
 }
 
-
-
 /* SEARCH PAGE STYLING -------------------------------------------------------*/
-
 /* Map Settings */
 #map{
-  height:400px;
+  height:350px;
   width: 40%;
   margin:0 5% 5% 5%;
-
-
 }
 
 /* page lightly faded overlay background */
@@ -737,11 +719,6 @@ header{
   margin-bottom:2%;
   margin-left:5%;
 }
-
-
-
-
-
 
 /* search form styling */
 #search-form{
@@ -782,10 +759,12 @@ header{
   border:none;
   padding:5px 10px;
 }
+
 #search-form select{
   border:1px solid white;
   border-radius:0;
 }
+
 hr{
   list-style-type:none;
   text-decoration:none;
@@ -794,7 +773,6 @@ hr{
 
 /* Like / Dislike Button Regular and Modal ------------------------------------ */
 /* search results styling here ------------------------------------------------ */
-
 /* like button - click to like - */
 #mLike{
   float:left;
@@ -808,28 +786,8 @@ hr{
   text-align: center;
   padding: 10px 15px;
   margin: 1% 2% 1% 5%;
-}
-
-#mLike{
   margin-top:-7%;
   margin-left:65%;
-}
-
-/* likes btn - count -  */
-#mLikes{
-  float:left;
-  display: none;
-  list-style-type: none;
-  text-decoration: none;
-  width:10%;
-  background: none;
-  border: 1px solid black;
-  font-family: "Raleway", sans-serif;
-  font-size: 18px;
-  color:black;
-  text-align: center;
-  padding: 10px 15px;
-  margin: 1% 2%;
 }
 
 /* dislike button - click to dislike - */
@@ -845,33 +803,8 @@ hr{
   text-align: center;
   padding: 10px 15px;
   margin: 1% 2%;
-}
-
-#mDislike{
   margin-top:-7%;
   margin-left:76%;
-}
-
-/* likes btn - count -  */
-#mDislikes{
-  float:left;
-  display: none;
-  list-style-type: none;
-  text-decoration: none;
-  background: none;
-  width:10%;
-  margin-left:30%;
-  border: 1px solid black;
-  font-family: "Raleway", sans-serif;
-  font-size: 18px;
-  color:black;
-  text-align: center;
-  padding: 10px 15px;
-  margin: 1% 2%;
-}
-
-#mDislikes{
-
 }
 
 /* Modal Popup for search display results */
@@ -886,7 +819,7 @@ hr{
   overflow: auto;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
-  }
+}
 
 /* Modal Content/Box */
 .modal-content {
@@ -913,8 +846,6 @@ hr{
   cursor: pointer;
 }
 
-
-
 /* "search results" title styling */
 #searchResultsTitle{
   font-family: "Merriweather", serif;
@@ -928,7 +859,6 @@ hr{
   margin: 0 5% 5% 5%;
   padding:5% 5%;
   background-color:rgba(41, 41, 41, 0.75);
-
 }
 
 #searchButtons button{
@@ -973,9 +903,6 @@ hr{
   margin-top:1%;
 }
 
-
-
-
 /* ABOUT PAGE STYLING ---------------------------------------------------------*/
 /* about us body section */
 #about-us-body{
@@ -1003,7 +930,6 @@ hr{
   font-family: "Merriweather", serif;
   font-size: 35px;
   margin:8% 4% 4%;
-
 }
 
 #body-background-about p{
@@ -1050,386 +976,283 @@ hr{
   margin:1%;
 }
 
-#emma{
-  margin-left:5%;
-  float:left;
-}
-
-#carlos{
-  margin-right:5%;
-}
-
-#kevin{
-  margin-right:4%
-}
-
-
-
-
+#emma{ margin-left:5%;  float:left; }
+#carlos{ margin-right:5%; }
+#kevin{ margin-right:4% }
 
 /* WEB ONLY (HIDE ALL MOBILE ELEMENTS) */
-
 .mobile-only{ display: none; }
-
 #hamburger-nav, #exit-btn{ display: none;}
 
 
 
 
-
-
-/* BEANS AND BREWS ANIMATION SYTLING --------------------------------------- */
-
-/*#logo{
-  width:50%;
-  margin-left:20%;
-}
-
-#container {
-  border:1px solid black;
-  height: 370px;
-  margin: 0 auto;
-  margin-left;
-  overflow: hidden;
-  position: relative;
-  top: -20px;
-  width: 600px;
-
-}
-
-#container div { position: absolute; }
-
- Beans Animation
-.beans {
-  display: none;
-  position: absolute;
-  bottom: 0;
-}
-
-.bean-1, .bean-2, .bean-3, .bean-4, .bean-5,
-.bean-6, .bean-7, .bean-8, .bean-9{
-  background-color: #2a140e;
-  bottom: 0;
-  z-index: 1000;
-  content: '';
-  height: 30px;
-  width: 45px;
-  border-radius: 15px;
-}
-
-.bean-line-1, .bean-line-2, .bean-line-3, .bean-line-4, .bean-line-5,
-.bean-line-6, .bean-line-7, .bean-line-8, .bean-line-9{
-  position:relative;
-  background-color: #4a3418;
-  bottom: 0;
-  z-index: 1001;
-  content: '';
-  height: 6px;
-  width: 45px;
-  border-radius: 50px;
-  bottom:12px;
-}
-
-
-.bean-1 {
-  bottom:5px;
-  left:125px;
-  transform: rotate(110deg);
-  -webkit-transform: rotate(110deg);
-}
-
-.bean-2 {
-  bottom:5px;
-  left:90px;
-  transform: rotate(140deg);
-  -webkit-transform: rotate(140deg);
-}
-
-.bean-3 {
-  left:60px;
-  transform: rotate(0deg);
-  -webkit-transform: rotate(0deg);
-}
-
-.bean-4 {
-  bottom:5px;
-  left:378px;
-  transform: rotate(80deg);
-  -webkit-transform: rotate(80deg);
-}
-
-.bean-5 {
-  left:5px;
-  transform: rotate(0deg);
-  -webkit-transform: rotate(0deg);
-}
-
-.bean-6 {
-  left:475px;
-  transform: rotate(0deg);
-  -webkit-transform: rotate(0deg);
-}
-
-.bean-7 {
-  bottom:31px;
-  left:405px;
-  transform: rotate(16deg);
-  -webkit-transform: rotate(16deg);
-}
-
-.bean-8 {
-  bottom:2px;
-  left:415px;
-  transform: rotate(30deg);
-  -webkit-transform: rotate(22deg);
-}
-
-.bean-9 {
-  bottom:3px;
-  left:517px;
-  transform: rotate(0deg);
-  -webkit-transform: rotate(30deg);
-}
-
-  Pour Beer Streem
-.pour {
-  position: absolute;
-  left: 35%;
-  width: 20px;
-  height: 0px;
-  background-color: #edaf32;
-  border-radius: 10px
-}
-
-  Large Outer Handel
-#large-handel{
-  border: 10px solid #FFF;
-  border-radius: 0 50px 50px 0;
-  left: 375px;
-  height: 175px;
-  margin-top:140px;
-  width: 60px;
-}
-
-   Smaller Inner Handel
-#small-handel{
-  border: 10px solid #FFF;
-  border-radius: 0 30px 30px 0;
-  left: 375px;
-  height: 135px;
-  margin-top:160px;
-  width: 40px;
-
-}
-
-   Beer Mug
-#beaker {
-  border: 10px solid #FFF;
-  border-radius: 0 0 30px 30px;
-  height: 250px;
-  left: 165px;
-  bottom: 0;
-  width: 200px;
-}
-
-#beaker:before,
-#beaker:after {
-  border: 10px solid #FFF;
-  border-bottom: 0;
-  border-radius: 30px 30px 0 0;
-  height: 30px;
-  position: absolute;
-  top: -40px;
-  width: 30px;
-}
-
-#beaker:before { left: -50px; }
-#beaker:after { right: -50px; }
-
-
- Beer Liquid
-#liquid {
-  background-color: #edaf32;
-  border: 10px solid #edaf32;
-  border-radius: 0 0 20px 20px;
-  bottom: 0;
-  height: 0px;
-  overflow: hidden;
-  width: 180px;
-}
-
- Beer Mug Lines - Faded
-.beer-line{
-  background-color: rgba(255, 255, 255, 0.25);
-  bottom: -225px;
-  content: '';
-  border-radius:10px;
-  height: 250px;
-  position: absolute;
-  transform: rotate(0deg);
-  -webkit-transform: rotate(0deg);
-  width: 35px;
-}
-
-.beer-line-1{
-  left: 0;
-
-}
-
-.beer-line-2{
-  left:48px;
-
-}
-
-.beer-line-3{
-  margin-left: 95px;
-
-}
-
-.beer-line-4{
-  margin-left: 142px;
-}
-
-Beer Bubbles Animation
-#liquid .bubble {
-  -webkit-animation-name: bubble;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  background-color: rgba(255, 255, 255, 0.2);
-  bottom: 0;
-  border-radius: 10px;
-  height: 20px;
-  width: 20px;
-}
-
-@-webkit-keyframes bubble {
-  0% { bottom: 0; }
-
-   50% {
-     background-color: rgba(255, 255, 255, 0.2);
-      bottom: 80px;
-   }
-
-   100% {
-     background-color: rgba(255, 255, 255, 0);
-      bottom: 160px;
-   }
-}
-
-.bubble1 {
-  left: 10px;
-  -webkit-animation-delay: 1000ms;
-  -webkit-animation-duration: 1000ms;
-}
-
-.bubble2 {
-  left: 50px;
-  -webkit-animation-delay: 700ms;
-  -webkit-animation-duration: 1100ms;
-}
-
-.bubble3 {
-  left: 100px;
-  -webkit-animation-delay: 1200ms;
-  -webkit-animation-duration: 1300ms;
-}
-
-.bubble4 {
-  left: 130px;
-  -webkit-animation-delay: 1100ms;
-  -webkit-animation-duration: 700ms;
-}
-
-.bubble5 {
-  left: 170px;
-  -webkit-animation-delay: 1300ms;
-  -webkit-animation-duration: 800ms;
-}
-
-  Foam
-.beer-foam {
-  position: absolute;
-  bottom: 10px;
-}
-
-.foam-1, .foam-2, .foam-3, .foam-4,
-.foam-5, .foam-6, .foam-7 {
-  float: left;
-  position: absolute;
-  z-index: 999;
-  width: 50px;
-  height: 50px;
-  border-radius: 30px;
-  background-color: #fefefe;
-}
-.foam-1 {
-  top: -30px;
-  left: -10px;
-}
-.foam-2 {
-  top: -35px;
-  left: 20px;
-}
-.foam-3 {
-  top: -25px;
-  left: 50px;
-}
-.foam-4 {
-  top: -35px;
-  left: 80px;
-}
-.foam-5 {
-  top: -30px;
-  left: 110px;
-}
-.foam-6 {
-  top: -20px;
-  left: 140px;
-}
-.foam-7 {
-  top: -30px;
-  left: 160px;
-}
-
- Fill Me Up Button Formating
-#fill-me-up{
-  list-style-type: none;
-  text-decoration: none;
-  border:1px solid white;
-  background: none;
-  color:white;
-  font-family: "Raleway", sans-serif;
-  font-size: 18px;
-  padding:10px 15px;
-  margin-left:30%;
-}*/
-
-
-
-
-
-
-
-
-
-
-
-
 /* MEDIA QUERIES TABLETS AND MOBILE DEVICES ------------------------------ */
-
+/* ======================================================================= */
 
 /* MEDIA QUIERIES TABLETS */
 /* tablets and ipad devices only */
-@media only screen and (max-width: 1000px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+  /* NAV BAR MENU STYLING  --------------------- */
 
 
+  #overlay div .nav ul{
+    margin-left:4%;
+    margin-top:2%;
+  }
+
+  #overlay div .line-brake-nav{
+    font-size: 38px;
+  }
+
+  #overlay div .nav li a {
+    font-size: 38px;
+    margin: 25px;
+  }
+
+  #overlay div .nav li a.active {
+    text-shadow: 0 0 25px white;
+  }
 
 
+  /* Main Beans & Brews Logo & Search Button Link On Index.html ------------------ */
+  .web-logo{
+    width:95%;
+    margin-left:5%;
+    margin-top:30%;
+  }
 
 
+  /* Button that connects the the Search.html page */
+  #search-connect-btn {
+    margin-left:40%;
+    margin-top:10%;
+  }
+
+  #search-connect-btn a {
+    border: 3px solid white;
+    font-size: 45px;
+    padding: 20px 25px;
+  }
+
+  #search-connect-btn a:hover {
+    list-style-type: none;
+    text-decoration: none;
+    color:#282828;
+    background-color:white;
+  }
+
+  /* Line Load Animation HIDE ---------------------- */
+  #content-index div {
+    display: none;
+  }
+
+  .line-1 { display: none; } 
+  .line-2 { display: none; } 
+  .line-3 { display: none; } 
+  .line-4 { display: none; } 
+  .line-5 { display: none; } 
+  .line-6 { display: none; }
+  .line-7 { display: none; }
+  .line-8 { display: none; } 
+  .line-9 { display: none; }
+  .line-10 { display: none; } 
+  .line-11 { display: none; }
+  .line-12 { display: none; }
+  .line-13 { display: none; } 
+  .line-14 { display: none; }
+  .line-15 { display: none; } 
+  .line-16 { display: none; } 
+  .line-17 { display: none; }
+  .line-18 { display: none; }
+  .line-19 { display: none; }
+  .line-20 { display: none; }
+  .line-21 { display: none; }
+  .line-22 { display: none; }
+  .line-23 { display: none; } 
+  .line-24 { display: none; }
+  .line-25 { display: none; }
+  .line-26 { display: none; } 
+  .line-27 { display: none; }
+  .line-28 { display: none; }
+  .line-29 { display: none; } 
+  .line-30 { display: none; }
+  .line-31 { display: none; }
 
 
-}
+  /* SEARCH PAGE STYLING ---------------------------*/
+  /* Map Settings */
+  #map{
+    height:500px;
+    margin:2% 5% 5% 5%;
+    width:90%;
+  }
+
+  /* page lightly faded overlay background */
+  #body-background{
+    margin:14% 1% 5% 5%;
+  }
+
+  /* search from title "search" */
+  #searchTitle{
+    font-size: 50px;
+  }
+
+  /* search form styling */
+  #search-form{
+    width:83%;
+    font-size:34px;
+    margin:0 12% 5% 5%;
+  }
+
+  /* search input button */
+  #search-btn{
+    font-size: 28px;
+    border:2px solid white;
+    padding:10px 20px;
+  }
+
+  #search-form input, #search-form select{
+    font-size:28px;
+  }
+
+  hr{
+    list-style-type:none;
+    text-decoration:none;
+    border:.5px solid white;
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+    margin: 30% auto;
+    padding: 60px 60px 250px 60px;
+
+  }
+
+  /* The Close Button */
+  .close {
+    font-size: 65px;
+    border-radius:5%;
+    margin-top:-20px;
+  }
+
+
+  /* "search results" title styling */
+  #searchResultsTitle{
+    font-size: 48px;
+  }
+
+  /* search results div styling */
+  #searchButtons button{
+    font-size:28px;
+  }
+
+  #searchButtons button:hover{
+    font-size:28px;
+  }
+
+  #searchButtons button.active{
+    font-size:28px;
+  }
+
+  #mLocName{
+    font-size: 48px;
+  }
+
+  #mLocRating{
+    font-size: 34px;
+    margin:3% 0 ;
+  }
+
+  #userRates{
+    font-size: 28px;
+  }
+
+  #mLocVicinity{
+    font-size: 32px;
+    margin-top:3%;
+  }
+
+  /* Like / Dislike Button Regular and Modal -------- */
+  /* search results styling here ------------------------- */
+
+  /* like button - click to like - */
+  #mLike{
+    font-size: 26px;
+    padding: 15px 20px;
+    margin-top:10%;
+    margin-left:1%;
+  }
+
+  /* dislike button - click to dislike - */
+  #mDislike{
+    font-size: 26px;
+    width:30%;
+    padding: 15px 20px;
+    margin-top:10%;
+    margin-left:1%;
+  }
+
+  /* ABOUT PAGE STYLING -----------------------*/
+  /* about us body section */
+  #about-us-body{
+    height:625px;
+    margin:17% 5% 5% 5%;
+    padding:1% 3% 10% 3%;
+    float:none;
+    width:83%;
+  }
+
+  #about-us-connect{
+    height:350px;
+    margin: 0 5% 5% 5%;
+    padding: 3% 3%;
+    float:none;
+    width:83%;
+  }
+
+  #body-background-about h1{
+    font-size: 55px;
+  }
+
+  #body-background-about p{
+    font-family:"Open Sans", sans-serif;
+    width:90%;
+    font-size:40px;
+    line-height: 45px;
+  }
+
+  #about-us-connect i{
+   display: none;
+  }
+
+  /* individual sections for team members links */
+  #individual-conections p{
+    font-size:35px;
+  }
+
+  #individual-conections a{
+    font-size:50px;
+    padding:3.5px;
+  }
+
+  #emma, #kevin, #david, #carlos {
+    background-color: rgba(41, 41, 41, 0.65);
+    color:white;
+    text-align:center;
+    padding:2%;
+    float:left;
+    width: 37%;
+    margin:0 2.5% 2.5% 5% ;
+  }
+
+  #emmma{ margin-left:5%; }
+  #david{ margin-left:5%; }
+  #kevin{ margin-right:5%; }
+  #carlos{ margin-right:5%; }
+
+  }
 
 
 
@@ -1443,7 +1266,7 @@ Beer Bubbles Animation
 /* MEDIA QUIERIES PHONES */
 /* for mobile devices only */
 /* insert this exact line (   (min-height: 680px),   ) inbetween media and only */
-@media (min-height: 680px), only screen and (min-width: 320px) and (max-width: 780px)
+@media only screen and (min-width: 320px) and (max-width: 780px)
   and (orientation: portrait){
 
     /* Body Background Styling */
@@ -1452,346 +1275,325 @@ Beer Bubbles Animation
     background-size:cover;
   }
 
+  /* NAV BAR MENU STYLING  ---------------- */
+  #hamburger-nav{
+    display: initial;
+    color:white;
+    float:left;
+    font-size: 75px;
+    margin:7% 7%;
+    /* rotate on hover */
+     border-radius: 50%;
+    -webkit-transition: -webkit-transform .55s ease-in-out;
+            transition:         transform .55s ease-in-out;
+  }
 
-/* NAV BAR MENU STYLING  ---------------- */
+  #hamburger-nav:hover {
+    cursor: pointer;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
 
-#hamburger-nav{
-  display: initial;
-  color:white;
-  float:left;
-  font-size: 75px;
-  margin:7% 7%;
-  /* rotate on hover */
-   border-radius: 50%;
-  -webkit-transition: -webkit-transform .55s ease-in-out;
-          transition:         transform .55s ease-in-out;
+  /* NAV MENU OVERLAY --------------------------------- */
+  #overlay {
+    display: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width:100%;
+    height:100%;
+    text-align:center;
+    z-index: 1000;
+  }
+
+  #overlay div {
+    height: 500px;
+    width:85%;
+    margin:5% 10% 5% 5%;
+    background-color: #fff;
+    border:1px solid white;
+    padding:15px;
+    box-shadow: 0 0 20px gray;
+    text-align:center;
+  }
+
+  #overlay #exit-btn{
+    display: inherit;
+    font-size:55px;
+    margin-top:5%;
+    /* rotate on hover */
+    border-radius: 10%;
+    -webkit-transition: -webkit-transform .4s ease-in-out;
+            transition:         transform .4s ease-in-out;
+  }
+
+  #overlay #exit-btn:hover {
+    cursor: pointer;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+
+  #overlay div .nav ul{
+    width:100%;
+    padding:20px 15px;
+    margin-top:5%;
+
+  }
+
+  #overlay div .nav li{
+    display: block;
+    text-align:center;
+    width:95%;
+    margin-top:1.5%;
+  }
+
+  #overlay div .line-brake-nav{ display:none; }
+
+  #overlay div .nav li a {
+    color: black;
+    font-size: 55px;
+  }
+
+  #overlay div .nav li a:hover {
+    color:#DED5D3;
+    /*text-shadow: 0 0 25px #DED5D3;*/
+  }
+
+  #overlay div .nav li a.active {
+    color:#DED5D3;
+    /*text-shadow: 0 0 25px #DED5D3;*/
+  }
+
+  /* Main Beans & Brews Logo & Search Button Link On Index.html -------------- */
+  .web-logo{
+    display: none;
+  }
+
+  .mobile-logo{
+    display: initial;
+    width:100%;
+    margin-top:15%
+  }
+
+  /* Button that connects the the Search.html page */
+  #search-connect-btn {
+    margin-left:39%;
+    margin-top:10%
+  }
+
+  #search-connect-btn a{
+    font-size:55px;
+    border:3px solid white;
+    padding:25px 30px;
+  }
+
+  /* Line Load Animation Hide ----------------------- */
+  #content-index div { display: none;}
+
+  .line-1{ display: none; }
+  .line-2{ display: none; }
+  .line-3{ display: none; }
+  .line-4{ display: none; }
+  .line-5{ display: none; }
+  .line-6{ display: none; }
+  .line-7{ display: none; }
+  .line-8{ display: none; }
+  .line-9{ display: none; }
+  .line-10{ display: none; }
+  .line-11{ display: none; }
+  .line-12{ display: none; }
+  .line-13{ display: none; }
+  .line-14{ display: none; }
+  .line-15{ display: none; }
+  .line-16{ display: none; }
+  .line-17{ display: none; }
+  .line-18{ display: none; }
+  .line-19{ display: none; }
+  .line-20{ display: none; }
+  .line-21{ display: none; }
+  .line-22{ display: none; }
+  .line-23{ display: none; }
+  .line-24{ display: none; }
+  .line-25{ display: none; }
+  .line-26{ display: none; }
+  .line-27{ display: none; }
+  .line-28{ display: none; }
+  .line-29{ display: none; }
+
+
+  /* SEARCH PAGE STYLING --------------------------------*/
+  /* Map Settings */
+  #map{
+    height:600px;
+    width: 90%;
+    margin:2% 5% 5% 5%;
+  }
+
+  /* page lightly faded overlay background */
+  #body-background{
+    margin:17% 5% 5% 5%;
+  }
+
+  .ham-nav-search{
+    margin-top:-10%;
+  }
+
+  /* search from title "search" */
+  #searchTitle{
+    font-size: 50px;
+
+  }
+
+  /* search form styling */
+  #search-form{
+    width:83%;
+    font-size:45px;
+    margin:0 12% 5% 5%;
+  }
+
+  /* search input button */
+  #search-btn{
+    font-size: 35px;
+    border:2px solid white;
+    padding:10px 20px;
+  }
+
+  #search-form input, #search-form select{
+    font-size:35px;
+
+  }
+
+  hr{
+    list-style-type:none;
+    text-decoration:none;
+    border:.5px solid white;
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+    margin: 60% auto;
+    padding: 60px 60px 300px 60px;
+
+  }
+
+  /* The Close Button */
+  .close {
+    font-size: 65px;
+    border-radius:5%;
+    margin-top:-20px;
+  }
+
+
+  /* "search results" title styling */
+  #searchResultsTitle{
+    font-size: 50px;
+  }
+
+  /* search results div styling */
+  #searchButtons button{
+    font-size:38px;
+  }
+
+  #searchButtons button:hover{
+    font-size:38px;
+  }
+
+  #searchButtons button.active{
+    font-size:38px;
+  }
+
+  #mLocName{
+    font-size: 60px;
+  }
+
+  #mLocRating{
+    font-size: 38px;
+    margin:3% 0 ;
+  }
+
+  #userRates{
+    font-size: 23px;
+  }
+
+  #mLocVicinity{
+    font-size: 34px;
+    margin-top:3%;
+  }
+
+  /* Like / Dislike Button Regular and Modal ---------------------- */
+  /* search results styling here ------------------------------- */
+  /* like button - click to like - */
+  #mLike{
+    font-size: 34px;
+    padding: 15px 20px;
+    margin-top:15%;
+    margin-left:1%;
+  }
+
+  /* dislike button - click to dislike - */
+  #mDislike{
+    font-size: 34px;
+    width:30%;
+    padding: 15px 20px;
+    margin-top:15%;
+    margin-left:1%;
+  }
+
+  /* ABOUT PAGE STYLING --------------------------------*/
+  /* about us body section */
+  #about-us-body{
+    height:625px;
+    margin:17% 5% 5% 5%;
+    padding:1% 3% 10% 3%;
+    float:none;
+    width:83%;
+  }
+
+  #about-us-connect{
+    height:350px;
+    margin: 0 5% 5% 5%;
+    padding: 3% 3%;
+    float:none;
+    width:83%;
+  }
+
+  #body-background-about h1{
+    font-size: 55px;
+  }
+
+  #body-background-about p{
+    font-family:"Open Sans", sans-serif;
+    width:90%;
+    font-size:40px;
+    line-height: 45px;
+  }
+
+  #about-us-connect i{
+   display: none;
+  }
+
+  /* individual sections for team members links */
+  #individual-conections p{
+    font-size:35px;
+  }
+
+  #individual-conections a{
+    font-size:50px;
+    padding:3.5px;
+  }
+
+  #emma, #kevin, #david, #carlos {
+    background-color: rgba(41, 41, 41, 0.65);
+    color:white;
+    text-align:center;
+    padding:2%;
+    float:left;
+    width: 37%;
+    margin:0 2.5% 2.5% 5% ;
+  }
+
+  #emmma{ margin-left:5%; }
+  #david{ margin-left:5%; }
+  #kevin{ margin-right:5%; }
+  #carlos{ margin-right:5%; }
 }
-
-#hamburger-nav:hover {
-  cursor: pointer;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
-
-/* NAV MENU OVERLAY ----------------------------------------------------------- */
-#overlay {
-  display: none;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width:100%;
-  height:100%;
-  text-align:center;
-  z-index: 1000;
-}
-
-#overlay div {
-  height: 500px;
-  width:85%;
-  margin:5% 10% 5% 5%;
-  background-color: #fff;
-  border:1px solid white;
-  padding:15px;
-  box-shadow: 0 0 20px gray;
-  text-align:center;
-}
-
-
-#overlay #exit-btn{
-  display: inherit;
-  font-size:55px;
-  margin-top:5%;
-  /* rotate on hover */
-  border-radius: 10%;
-  -webkit-transition: -webkit-transform .4s ease-in-out;
-          transition:         transform .4s ease-in-out;
-}
-
-#overlay #exit-btn:hover {
-  cursor: pointer;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
-
-#overlay div .nav ul{
-  width:100%;
-  padding:20px 15px;
-  margin-top:5%;
-
-}
-
-
-#overlay div .nav li{
-  display: block;
-  text-align:center;
-  width:95%;
-  margin-top:1.5%;
-}
-
-#overlay div .line-brake-nav{ display:none; }
-
-#overlay div .nav li a {
-  color: black;
-  font-size: 55px;
-}
-
-#overlay div .nav li a:hover {
-  color:#DED5D3;
-  /*text-shadow: 0 0 25px #DED5D3;*/
-}
-
-#overlay div .nav li a.active {
-  color:#DED5D3;
-  /*text-shadow: 0 0 25px #DED5D3;*/
-}
-
-
-/* Main Beans & Brews Logo & Search Button Link On Index.html -------------- */
-
-.web-logo{
-  display: none;
-}
-
-.mobile-logo{
-  display: initial;
-  width:100%;
-  margin-top:15%
-}
-
-/* Button that connects the the Search.html page */
-#search-connect-btn {
-  margin-left:39%;
-  margin-top:10%
-}
-
-#search-connect-btn a{
-  font-size:55px;
-  border:3px solid white;
-  padding:25px 30px;
-
-}
-
-/* Line Load animation on the Index.html Page ------------------------------ */
-#content-index { display: none;}
-
-.line-1{ display: none; }
-.line-2{ display: none; }
-.line-3{ display: none; }
-.line-4{ display: none; }
-.line-5{ display: none; }
-.line-6{ display: none; }
-.line-7{ display: none; }
-.line-8{ display: none; }
-.line-9{ display: none; }
-.line-10{ display: none; }
-.line-11{ display: none; }
-.line-12{ display: none; }
-.line-13{ display: none; }
-.line-14{ display: none; }
-.line-15{ display: none; }
-.line-16{ display: none; }
-.line-17{ display: none; }
-.line-18{ display: none; }
-.line-19{ display: none; }
-.line-20{ display: none; }
-.line-21{ display: none; }
-.line-22{ display: none; }
-.line-23{ display: none; }
-.line-24{ display: none; }
-.line-25{ display: none; }
-.line-26{ display: none; }
-.line-27{ display: none; }
-.line-28{ display: none; }
-.line-29{ display: none; }
-
-
-
-/* SEARCH PAGE STYLING -------------------------------------------------------*/
-
-/* Map Settings */
-#map{
-  height:600px;
-  width: 90%;
-  margin:2% 5% 5% 5%;
-
-
-}
-
-/* page lightly faded overlay background */
-#body-background{
-  margin:17% 5% 5% 5%;
-}
-
-.ham-nav-search{
-  margin-top:-10%;
-}
-
-
-/* search from title "search" */
-#searchTitle{
-  font-size: 50px;
-
-}
-
-/* search form styling */
-#search-form{
-  width:83%;
-  font-size:45px;
-  margin:0 12% 5% 5%;
-}
-
-/* search input button */
-#search-btn{
-  font-size: 35px;
-  border:2px solid white;
-  padding:10px 20px;
-}
-
-#search-form input, #search-form select{
-  font-size:35px;
-
-}
-
-hr{
-  list-style-type:none;
-  text-decoration:none;
-  border:.5px solid white;
-}
-
-
-
-
-
-/* Modal Content/Box */
-.modal-content {
-  margin: 60% auto;
-  padding: 60px 60px 300px 60px;
-
-}
-
-/* The Close Button */
-.close {
-  font-size: 65px;
-  border-radius:5%;
-  margin-top:-20px;
-}
-
-
-/* "search results" title styling */
-#searchResultsTitle{
-  font-size: 50px;
-}
-
-/* search results div styling */
-#searchButtons button{
-  font-size:38px;
-}
-
-#searchButtons button:hover{
-  font-size:38px;
-}
-
-#searchButtons button.active{
-  font-size:38px;
-}
-
-#mLocName{
-  font-size: 60px;
-}
-
-#mLocRating{
-  font-size: 38px;
-  margin:3% 0 ;
-}
-
-#userRates{
-  font-size: 23px;
-}
-
-#mLocVicinity{
-  font-size: 34px;
-  margin-top:3%;
-}
-
-/* Like / Dislike Button Regular and Modal ------------------------------------ */
-/* search results styling here ------------------------------------------------ */
-
-/* like button - click to like - */
-#mLike{
-  font-size: 34px;
-  padding: 15px 20px;
-  margin-top:15%;
-  margin-left:1%;
-}
-
-/* dislike button - click to dislike - */
-#mDislike{
-  font-size: 34px;
-  width:30%;
-  padding: 15px 20px;
-  margin-top:15%;
-  margin-left:1%;
-}
-
-
-
-/* ABOUT PAGE STYLING ---------------------------------------------------------*/
-/* about us body section */
-#about-us-body{
-  height:625px;
-  margin:17% 5% 5% 5%;
-  padding:1% 3% 10% 3%;
-  float:none;
-  width:83%;
-}
-
-#about-us-connect{
-  height:350px;
-  margin: 0 5% 5% 5%;
-  padding: 3% 3%;
-  float:none;
-  width:83%;
-}
-
-#body-background-about h1{
-  font-size: 55px;
-
-}
-
-#body-background-about p{
-  font-family:"Open Sans", sans-serif;
-  width:90%;
-  font-size:40px;
-  line-height: 45px;
-}
-
-#about-us-connect i{
- display: none;
-}
-
-/* individual sections for team members links */
-#individual-conections p{
-  font-size:35px;
-}
-
-#individual-conections a{
-  font-size:50px;
-  padding:3.5px;
-}
-
-#emma, #kevin, #david, #carlos {
-  background-color: rgba(41, 41, 41, 0.65);
-  color:white;
-  text-align:center;
-  padding:2%;
-  float:left;
-  width: 37%;
-  margin:0 2.5% 2.5% 5% ;
-}
-
-#emmma{ margin-left:5%; }
-#david{ margin-left:5%; }
-#kevin{ margin-right:5%; }
-#carlos{ margin-right:5%; }
