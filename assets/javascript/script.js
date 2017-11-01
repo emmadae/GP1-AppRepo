@@ -105,13 +105,16 @@ $(document).ready(function(){
       var locationName= [];
       var locationRating=[];
       var locationVicinity=[];
+      var location;
+      var austin = {lat: 30.286, lng: -97.731};
       // var location = "";
-
+/*map creation by TYPE---------------------------------------------------------*/
       function initMap() {
-        var austin = {lat: 30.286, lng: -97.731};
-
+        //make a new map
         map = new google.maps.Map(document.getElementById('map'), {
+          //center map on austin lat/lng
           center: austin,
+          //sets zoom
           zoom: drawDistance
         });
 
@@ -125,11 +128,9 @@ $(document).ready(function(){
           // name: location,
         }, callback);
       }
-
+/*map creation by NAME---------------------------------------------------------*/
       function initMapName() {
-        console.log("withname");
         var austin = {lat: 30.286, lng: -97.731};
-
         map = new google.maps.Map(document.getElementById('map'), {
           center: austin,
           zoom: drawDistance
@@ -144,19 +145,17 @@ $(document).ready(function(){
           name: search,
         }, callback);
       }
-// [destiantionSelect]
 
 
+/*variables used for markers---------------------------------------------------*/
 var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
-
 var basicIcon = 'https://chart.googleapis.com/chart?chst=d_simple_text_icon_below&chld=rating|100|32302e|beer|24|FFCC33|32302e';
 
+/*marker generation------------------------------------------------------------*/
       function createMarker(place) {
         var placeLoc = place.geometry.location;
         if(place.rating == "undefined"){
-
         }
-
         var basicIconc = 'https://chart.googleapis.com/chart?chst=d_simple_text_icon_below&chld='+place.rating+'|14|32302e|cafe|24|ebe4c2|32302e';
         var marker = new google.maps.Marker({
           map: map,
@@ -169,8 +168,7 @@ var basicIcon = 'https://chart.googleapis.com/chart?chst=d_simple_text_icon_belo
 
         });
 
-
-
+/*marker click function--------------------------------------------------------*/
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.setContent(place.name + "<br>" + "Rating: " + place.rating + "/5" + "<br>" + "Open now: " + place.opening_hours.open_now);
           infowindow.open(map, this);
@@ -188,15 +186,15 @@ var basicIcon = 'https://chart.googleapis.com/chart?chst=d_simple_text_icon_belo
         });
       }
 
-
+/*map generation---------------------------------------------------------------*/
 initMap();
 
+/*search results button generation---------------------------------------------*/
 var result;
 function btnGen(result){
   $("#searchButtons").append("<button id="+result.id+" class='searchBtn'>"+result.name+"</button>");
-  $("#"+result.id).hide().fadeIn(300);
+  $("#"+result.id).hide().fadeIn(100);
 }
-
       function callback(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           for (let i = 0; i < results.length; i++){
@@ -216,13 +214,13 @@ function btnGen(result){
 
 
 
-/*Modal Generation-------------------------------------------------------------*/
-//gets set to id from locationId[]
+/*Modal variables--------------------------------------------------------------*/
 var id;
+//gets set to id from locationId[]
 
+/*modal generation-------------------------------------------------------------*/
 //function triggers on any search result button press
 $(document).on("click", ".searchBtn", function(){
-    console.log("working");
     id = $(this).attr("id");
     //sets variable = respective locationId array #
     var arrayNum = locationId.indexOf(id);
@@ -231,12 +229,12 @@ $(document).on("click", ".searchBtn", function(){
 
     $("#mLocVicinity").text(locationVicinity[arrayNum]);
 
+//firebase checks if child for location already exists
     database.ref("/locations").on("value", function(snapshot){
       if(snapshot.child(id).exists()){
-        console.log("coolio");
+
+      //if it doesn't add a new child with likes/dislikes
       }else{
-        console.log("nope");
-        console.log(id);
         database.ref("/locations").update({
           //ignore syntax error on line below. working as intended
           [id]:{
@@ -244,9 +242,8 @@ $(document).on("click", ".searchBtn", function(){
             disliked:0
           }
         });
-
       }
-      console.log(snapshot.child(id).child("liked").val());
+      //set likes and dislikes equal to respective firebase
       var popular = snapshot.child(id).child("liked").val();
       var unpopular = snapshot.child(id).child("disliked").val();
       $("#userRates").text("Likes: "+popular+" | Dislikes: "+ unpopular);
@@ -280,8 +277,7 @@ $(document).on("click", ".searchBtn", function(){
     handleLocationError(false, infoWindow, map.getCenter());
   }
 
-
-//generates divs to hold information regarding best search results
+/*generates modal information--------------------------------------------------*/
 // Get the modal
 var modal = document.getElementById('myModal');
 // Get the button that opens the modal
