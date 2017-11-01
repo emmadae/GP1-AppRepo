@@ -5,9 +5,10 @@ Beans & Brews is a user-oriented application based in Austin, TX. This app is de
 
 Usage:
 This app is very simple to use.
-1) Simply navigate to the search page and then select from 1 or more of our 5 search parameters. You can choose by beverage choice, zip code, how many miles away from your current location, by name of restaurant, and by Zomato recommendation.
+1) Simply navigate to the search page and then select from 1 or more of our 4 search parameters. You can choose by beverage choice, zip code, and how many miles away from your current location.
 2) Once you have chosen your search parameter. Please hit the "Search" button and watch as your results appear on the interactive google map and or by viewing the search results that will populate the bottom of the screen.
 3) If you would like to view specific information about a certain location. Simply click one of the search result buttons that appear at the bottom of the scree. This will create a pop-up that will give you additional information on the restaurant such as location, rating, and the ability for the user to either like or dislike a location based on their personal experience there and their preference.
+5) If you're not sure where you would like to go and you would like a recommendation. Simply click your beverage choice and click the "Zomato Tips" button and watch the search results appear with the top Zomato coffee shops or breweries in the area.
 4) Its that simple. An interactive web application designed to search coffee shops and breweries in the Austin area on the go!
 
 Creators:
