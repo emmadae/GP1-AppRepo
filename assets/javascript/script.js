@@ -1,23 +1,25 @@
+// Start Functions    
     // on click funtion for navigation bar to appear on click
     $('#nav-icon3').click(function(){
         $(".list-items").slideToggle(800);
     });
 
-
+    // fade in the "search" button on the index.html page
+    // show animated lines on load of page
     $(window).load(function() {
       $("#content-index").show();
       $("#search-connect-btn").fadeIn(2000);
     });
 
+    // show the likes on click of the "like" button
     $("#like").click(function () {
       $("#likes").show(200);
     });
 
+    // show the dislikes on click of the "dislike" button
     $("#dislike").click(function () {
       $("#dislikes").show(200);
     });
-
-
 
 
     // overlay navigation menu
@@ -28,6 +30,7 @@
     $("#exit-btn").click(function() {
       $("#overlay").hide();
     });
+
 //-----------------------------------------------------------------------------
 // WORKING SCRIPT--------------------------------------------------------------
 
